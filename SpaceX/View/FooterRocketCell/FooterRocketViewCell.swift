@@ -4,21 +4,17 @@ import UIKit
 
 class FooterRocketView: UIView {
 
-    var firstLauchLabel = UILabel(text: "First Launch")
-    var countryLabel = UILabel(text: "Country")
-    var theCostOfLaunchLabel = UILabel(text: "The cost of launch")
-    
-    var firstStage = UILabel(text: "First Stage")
-    
-    var enginesFirstLabel = UILabel(text: "Engines")
-    var fuelAmountTonsFirstLabel = UILabel(text: "Fuel Amount Tons")
-    var burnTimeFirstLabel = UILabel(text: "Burn Time Sec")
-    
-    var secondStage = UILabel(text: "Second Stage")
-    
-    var enginesSecondLabel = UILabel(text: "Engines")
-    var fuelAmountTonsSecondLabel = UILabel(text: "Fuel Amount Tons")
-    var burnTimeSecondLabel = UILabel(text: "Burn Time Sec")
+    var firstLauchLabel = UILabel(text: .firstLaunch)
+    var countryLabel = UILabel(text:  .country)
+    var theCostOfLaunchLabel = UILabel(text: .costOfLaunch)
+    var firstStage = UILabel(text: .firstLaunch)
+    var enginesFirstLabel = UILabel(text: .engines)
+    var fuelAmountTonsFirstLabel = UILabel(text: .fuelAmountTonsFirst)
+    var burnTimeFirstLabel = UILabel(text: .burnTimeFirst)
+    var secondStage = UILabel(text: .secondStage)
+    var enginesSecondLabel = UILabel(text: .engines)
+    var fuelAmountTonsSecondLabel = UILabel(text: .fuelAmountTonsFirst)
+    var burnTimeSecondLabel = UILabel(text: .burnTimeFirst)
    
     override init(frame: CGRect) {
         super.init(frame: frame)

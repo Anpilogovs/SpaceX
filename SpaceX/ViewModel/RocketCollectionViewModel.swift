@@ -22,16 +22,16 @@ class RocketCollectionCellViewModel {
     var imageUrl: URL?
     
     init(movie: Rocket) {
-        self.nameRocket = movie.name
-        self.firstLaunch = movie.firstFlight
-        self.country = movie.country
+        self.nameRocket = movie.name ?? "0"
+        self.firstLaunch = movie.firstFlight ?? "0"
+        self.country = movie.country ?? "0"
         self.costLauch = "\(movie.costPerLaunch)"
-        self.enginesFirstStage = movie.secondStage.engines
-        self.fuelAmountTonsFirstStage = movie.firstStage.fuelAmountTons
-        self.burnTimeSecFirstStage = movie.firstStage.burnTimeSEC ?? 0
-        self.enginesSecondStage = movie.secondStage.engines
-        self.fuelAmountTonsSecondStage = movie.secondStage.fuelAmountTons
-        self.burnTimeSecSecondStage = movie.secondStage.burnTimeSEC ?? 0
+        self.enginesFirstStage = movie.secondStage?.engines ?? 0
+        self.fuelAmountTonsFirstStage = movie.firstStage?.fuelAmountTons ?? 0
+        self.burnTimeSecFirstStage = movie.firstStage?.burnTimeSec ?? 0
+        self.enginesSecondStage = movie.secondStage?.engines ?? 0
+        self.fuelAmountTonsSecondStage = movie.secondStage?.fuelAmountTons ?? 0
+        self.burnTimeSecSecondStage = movie.secondStage?.burnTimeSec ?? 0
         
 //        self.engines = makeImageURL(movie.posterPath ?? "")
     }

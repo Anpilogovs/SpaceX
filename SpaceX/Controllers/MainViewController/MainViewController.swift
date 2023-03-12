@@ -1,52 +1,34 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-        
-    let collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // collectionView.backgroundColor = .clear
-        return collectionView
-    }()
-
-    var viewModel: RocketViewModel = RocketViewModel()
+class MainViewController: UICollectionViewController {
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
+        self.registeCells()
         
-        configeView()
-        view.backgroundColor = .lightGray
+       
     }
     
-    private func configeView() {
-        self.view.addSubview(collectionView)
-        setupCollectionView()
-        setupContraints()
+    init() {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(450))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        super.init(collectionViewLayout: layout)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.getData()
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
-extension MainViewController {
-    static func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in
-            switch sectionNumber {
-            case 0:
-                return UICollectionView.createSectionForImage()
-            case 1:
-                return UICollectionView.creatSectionForHeader()
-            case 2:
-                return UICollectionView.creatSectionForMain()
-            case 3:
-                return UICollectionView.creatSectionForFooter()
-            default:
-                return nil
-            }
-        }
-    }
-}

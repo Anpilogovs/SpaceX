@@ -1,16 +1,16 @@
-//
-//  ImageCell.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 12.03.2023.
-//
 
-import Foundation
+import SDWebImage
 import UIKit
 
 class ImageCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
+    public static var identifier: String {
+        get {
+            return "ImageCell"
+        }
+    }
+
+    let rocketImageView: UIImageView = {
         let image = UIImageView()
         return image
     }()
@@ -23,4 +23,7 @@ class ImageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupCell(viewModel: RocketCollectionCellViewModel) {
+        self.rocketImageView.sd_setImage(with: viewModel.imageUrl)
+    }
 }

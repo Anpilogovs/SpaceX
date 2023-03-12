@@ -27,15 +27,15 @@ class FooterRocketCell: UICollectionViewCell {
     private func setupViewCell(viewModel: Rocket) {
         backView.firstLauchLabel.text = viewModel.firstFlight
         backView.countryLabel.text = viewModel.country
-        backView.theCostOfLaunchLabel.text = "\(viewModel.costPerLaunch)"
+        backView.theCostOfLaunchLabel.text = "\(viewModel.costPerLaunch ?? 0)"
         
-        backView.enginesFirstLabel.text = "\(viewModel.firstStage.engines)"
-        backView.fuelAmountTonsFirstLabel.text = "\(viewModel.firstStage.fuelAmountTons)"
-        backView.burnTimeFirstLabel.text = "\(String(describing: viewModel.firstStage.burnTimeSEC))"
+        backView.enginesFirstLabel.text = "\(viewModel.firstStage?.engines ?? 0)"
+        backView.fuelAmountTonsFirstLabel.text = "\(viewModel.firstStage?.fuelAmountTons ?? 0)"
+        backView.burnTimeFirstLabel.text = "\(viewModel.firstStage?.burnTimeSec ?? 0)"
         
-        backView.enginesSecondLabel.text = "\(viewModel.secondStage.engines)"
-        backView.fuelAmountTonsSecondLabel.text = "\(viewModel.secondStage.fuelAmountTons)"
-        backView.burnTimeSecondLabel.text = "\(String(describing: viewModel.secondStage.burnTimeSEC))"
+        backView.enginesSecondLabel.text = "\(viewModel.secondStage?.engines ?? 0)"
+        backView.fuelAmountTonsSecondLabel.text = "\(viewModel.secondStage?.fuelAmountTons ?? 0)"
+        backView.burnTimeSecondLabel.text = "\(viewModel.secondStage?.burnTimeSec ?? 0)"
     }
 }
 

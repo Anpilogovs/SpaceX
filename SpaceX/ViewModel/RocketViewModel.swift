@@ -9,8 +9,6 @@ import Foundation
  
 class RocketViewModel {
     
-    
-    
     func getData() {
         APICaller.getRocketInfo { result in
             switch result {

@@ -1,15 +1,29 @@
-//
-//  MainViewCollectionDataSource.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 10.03.2023.
-//
 
 import UIKit
 
-extension MainViewController: UICollectionViewDataSource {
+extension MainViewController {
     
-     
+    
+    
+    
+    // MARK: - Configure Compositional layout
+     func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in
+            switch sectionNumber {
+            case 0:
+                return self.createSectionForImage()
+            case 1:
+                return self.creatSectionForHeader()
+            case 2:
+                return self.creatSectionForMain()
+            case 3:
+                return self.creatSectionForFooter()
+            default:
+                return self.createSectionForImage()
+            }
+        }
+    }
+
     func setupCollectionView() {
         collectionView.dataSource =  self
         collectionView.delegate = self
@@ -17,6 +31,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func registeCells() {
+        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.identifier)
         collectionView.register(FooterRocketCell.self, forCellWithReuseIdentifier: FooterRocketCell.identifier)
         collectionView.register(HeaderRocketCell.self, forCellWithReuseIdentifier: HeaderRocketCell.identifier)
         collectionView.register(MainRocketCell.self, forCellWithReuseIdentifier: MainRocketCell.identifier)
@@ -28,17 +43,21 @@ extension MainViewController: UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return 4
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
-        case 0:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderRocketCell.identifier, for: indexPath) as? HeaderRocketCell else { return UICollectionViewCell() }
+        case 0: guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell else { return UICollectionViewCell() }
             return cell
-        case 1: guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainRocketCell.identifier, for: indexPath) as? MainRocketCell else { return UICollectionViewCell() }
+        case 1:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderRocketCell.identifier, for: indexPath) as? HeaderRocketCell else { return UICollectionViewCell() }
             return cell
-        case 2:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FooterRocketCell.identifier, for: indexPath) as? FooterRocketCell else { return UICollectionViewCell() }
+            
+        case 2: guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainRocketCell.identifier, for: indexPath) as? MainRocketCell else { return UICollectionViewCell() }
+            return cell
+            
+        case 3:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FooterRocketCell.identifier, for: indexPath) as? FooterRocketCell else { return UICollectionViewCell() }
             return cell
         default:
             return UICollectionViewCell()
@@ -46,33 +65,8 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.row {
-        case 0 : return CGSize(width: collectionView.frame.width, height: 50)
-        case 1 : return CGSize(width: collectionView.frame.width / 4, height: 100)
-        case 2: return CGSize(width: collectionView.frame.width, height: 390)
-        default: break
-        }
-        return CGSize(width: 50, height: 50)
-    }
-    
-    
-}
-
-extension MainViewController: UICollectionViewDelegate {
-    
-
-}
-
 extension MainViewController {
-    func setupContraints() {
-        collectionView.snp.makeConstraints { contraints in
-            contraints.top.equalToSuperview().inset(300)
-            contraints.leading.trailing.equalToSuperview().inset(16)
-            contraints.bottom.equalToSuperview()
-        }
-    }
+    
+
 }
+

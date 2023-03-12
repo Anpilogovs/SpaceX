@@ -9,10 +9,10 @@ import UIKit
 
 class MainRocketViewCell: UIView {
 
-    var hightLabel = UILabel(text: "22")
-    var diameterLabel = UILabel(text: "Диаметер")
-    var massLabel = UILabel(text: "Macca")
-    var payloadLabel = UILabel(text: "Полезная нагрузка")
+    var hightLabel = UILabel(text: .hight)
+    var diameterLabel = UILabel(text: .diameter)
+    var massLabel = UILabel(text: .mass )
+    var payloadLabel = UILabel(text: .payload)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
