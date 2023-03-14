@@ -16,6 +16,16 @@ class FooterRocketView: UIView {
     var fuelAmountTonsSecondLabel = UILabel(text: .fuelAmountTonsFirst, size: 16)
     var burnTimeSecondLabel = UILabel(text: .burnTimeFirst, size: 16)
     
+    var firstLauchLb = UILabel(text: .hight, size: 16)
+    var countryLb = UILabel(text:  .country, size: 16)
+    var theCostOfLaunchLb = UILabel(text: .costOfLaunch, size: 16)
+    var enginesFirstLl = UILabel(text: .engines, size: 16)
+    var fuelAmountTonsFirstLb = UILabel(text: .fuelAmountTonsFirst, size: 16)
+    var burnTimeFirstLb = UILabel(text: .burnTimeFirst, size: 16)
+    var enginesSecondLb = UILabel(text: .engines, size: 16)
+    var fuelAmountTonsSecondLb = UILabel(text: .fuelAmountTonsFirst, size: 16)
+    var burnTimeSecondLb = UILabel(text: .burnTimeFirst, size: 16)
+    
     var launchButton = UIButton(title: "Launch")
  
     override init(frame: CGRect) {
@@ -29,7 +39,8 @@ class FooterRocketView: UIView {
     }
     
     private func setUpView() {
-        
+        launchButton.addTarget(self, action: #selector(didTapButton),
+                               for: .touchUpInside)
         addSubview(firstLauchLabel)
         addSubview(countryLabel)
         addSubview(theCostOfLaunchLabel)
@@ -42,6 +53,30 @@ class FooterRocketView: UIView {
         addSubview(fuelAmountTonsSecondLabel)
         addSubview(burnTimeSecondLabel)
         addSubview(launchButton)
+        
+        addSubview(firstLauchLb)
+        addSubview(countryLb)
+        addSubview(theCostOfLaunchLb)
+        addSubview(enginesFirstLl)
+        addSubview(fuelAmountTonsFirstLb)
+        addSubview(burnTimeFirstLb)
+        addSubview(enginesSecondLb)
+        addSubview(fuelAmountTonsSecondLb)
+        addSubview(burnTimeSecondLb)
+//
+//        var firstLauchLb = UILabel(text: .hight, size: 16)
+//        var countryLb = UILabel(text:  .country, size: 16)
+//        var theCostOfLaunchLb = UILabel(text: .costOfLaunch, size: 16)
+//        var enginesFirstLl = UILabel(text: .engines, size: 16)
+//        var fuelAmountTonsFirstLb = UILabel(text: .fuelAmountTonsFirst, size: 16)
+//        var burnTimeFirstLb = UILabel(text: .burnTimeFirst, size: 16)
+//        var enginesSecondLb = UILabel(text: .engines, size: 16)
+//        var fuelAmountTonsSecondLb = UILabel(text: .fuelAmountTonsFirst, size: 16)
+//        var burnTimeSecondLb = UILabel(text: .burnTimeFirst, size: 16)
+    }
+    
+    @objc private func didTapButton() {
+        
     }
 }
 
@@ -104,6 +139,50 @@ extension FooterRocketView {
             constraints.leading.trailing.equalToSuperview().inset(16)
             constraints.top.equalTo(burnTimeSecondLabel).inset(70)
             constraints.height.equalTo(50)
+        }
+        firstLauchLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(firstLauchLabel)
+        }
+        
+        countryLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(countryLabel)
+        }
+        
+        theCostOfLaunchLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(theCostOfLaunchLabel)
+        }
+        
+        enginesFirstLl.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(enginesFirstLabel)
+        }
+        
+        fuelAmountTonsFirstLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(fuelAmountTonsFirstLabel)
+        }
+        
+        burnTimeFirstLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(burnTimeFirstLabel)
+        }
+        
+        enginesSecondLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(enginesSecondLabel)
+        }
+        
+        fuelAmountTonsSecondLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(fuelAmountTonsSecondLabel)
+        }
+        
+        burnTimeSecondLb.snp.makeConstraints { constraints in
+            constraints.trailing.equalToSuperview().inset(32)
+            constraints.top.equalTo(burnTimeSecondLabel)
         }
     }
 }

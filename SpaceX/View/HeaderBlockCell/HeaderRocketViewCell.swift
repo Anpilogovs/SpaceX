@@ -13,10 +13,10 @@ class HeaderRocketViewCell: UIView {
     
     private var settinButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "Setting"), for: .normal)
+        var image = UIImage(named: "setting")?.withTintColor(.white)
+        button.setImage(image, for: .normal)
         button.titleLabel?.text = "Hello"
-        button.backgroundColor = .blue
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapSettingButton), for: .touchUpInside)
         return button
     }()
     
@@ -36,7 +36,7 @@ class HeaderRocketViewCell: UIView {
         addSubview(settinButton)
     }
     
-    @objc private func didTapButton() {
+    @objc private func didTapSettingButton() {
         
     }
 }
