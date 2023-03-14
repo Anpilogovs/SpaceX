@@ -1,40 +1,20 @@
 
 import UIKit
 
-extension MainViewController {
+extension MainViewController: UICollectionViewDataSource {
     
-    
-    
-    
-    // MARK: - Configure Compositional layout
-     func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in
-            switch sectionNumber {
-            case 0:
-                return self.createSectionForImage()
-            case 1:
-                return self.creatSectionForHeader()
-            case 2:
-                return self.creatSectionForMain()
-            case 3:
-                return self.creatSectionForFooter()
-            default:
-                return self.createSectionForImage()
-            }
-        }
-    }
-
     func setupCollectionView() {
         collectionView.dataSource =  self
-        collectionView.delegate = self
         registeCells()
+        view.addSubview(collectionView)
+        setupContraints() 
     }
     
     func registeCells() {
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.identifier)
-        collectionView.register(FooterRocketCell.self, forCellWithReuseIdentifier: FooterRocketCell.identifier)
         collectionView.register(HeaderRocketCell.self, forCellWithReuseIdentifier: HeaderRocketCell.identifier)
         collectionView.register(MainRocketCell.self, forCellWithReuseIdentifier: MainRocketCell.identifier)
+        collectionView.register(FooterRocketCell.self, forCellWithReuseIdentifier: FooterRocketCell.identifier)
     }
     
     override func reloadInputViews() {
@@ -43,20 +23,29 @@ extension MainViewController {
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 4
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
+    }
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section {
+        case 0: return 1
+        case 1: return 1
+        case 2: return 4
+        case 3: return 1
+        default:
+            return 1
+        }
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.row {
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section{
         case 0: guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell else { return UICollectionViewCell() }
             return cell
         case 1:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderRocketCell.identifier, for: indexPath) as? HeaderRocketCell else { return UICollectionViewCell() }
             return cell
-            
         case 2: guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainRocketCell.identifier, for: indexPath) as? MainRocketCell else { return UICollectionViewCell() }
             return cell
-            
         case 3:  guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FooterRocketCell.identifier, for: indexPath) as? FooterRocketCell else { return UICollectionViewCell() }
             return cell
         default:
@@ -65,8 +54,11 @@ extension MainViewController {
     }
 }
 
+//MARK: - setupContraints
 extension MainViewController {
-    
-
+    private func setupContraints() {
+        collectionView.snp.makeConstraints { constraints in
+            constraints.trailing.leading.bottom.top.equalToSuperview()
+        }
+    }
 }
-

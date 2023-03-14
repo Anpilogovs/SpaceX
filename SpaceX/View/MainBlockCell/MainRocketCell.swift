@@ -17,9 +17,10 @@ class MainRocketCell: UICollectionViewCell {
 
     var mainBackView = MainRocketViewCell()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-    
+
         setupView()
         setupContraint()
     }
@@ -30,7 +31,7 @@ class MainRocketCell: UICollectionViewCell {
     
     private func setupView() {
         addSubview(mainBackView)
-        mainBackView.addBorder(color: .gray, width: 5)
+        mainBackView.addBorder(color: .black, width: 5)
         mainBackView.round()
     }
 }

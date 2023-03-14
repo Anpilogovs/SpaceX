@@ -10,13 +10,13 @@ class FooterRocketCell: UICollectionViewCell {
         }
     }
     
-    
    private var backView = FooterRocketView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
        addSubview(backView)
+       setupContraints()
        backgroundColor = .blue
     }
     
@@ -36,6 +36,13 @@ class FooterRocketCell: UICollectionViewCell {
         backView.enginesSecondLabel.text = "\(viewModel.secondStage?.engines ?? 0)"
         backView.fuelAmountTonsSecondLabel.text = "\(viewModel.secondStage?.fuelAmountTons ?? 0)"
         backView.burnTimeSecondLabel.text = "\(viewModel.secondStage?.burnTimeSec ?? 0)"
+    }
+}
+extension FooterRocketCell {
+    private func setupContraints() {
+        backView.snp.makeConstraints { constraints in
+            constraints.trailing.leading.bottom.top.equalToSuperview()
+        }
     }
 }
 

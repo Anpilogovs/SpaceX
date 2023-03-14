@@ -21,10 +21,18 @@ class HeaderRocketCell: UICollectionViewCell {
         super.init(frame: frame)
        
         addSubview(backFirstView)
-        backgroundColor = .red
+        setupContraints()
+        backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+extension HeaderRocketCell {
+    private func setupContraints() {
+        backFirstView.snp.makeConstraints { constraints in
+            constraints.trailing.leading.bottom.top.equalToSuperview()
+        }
     }
 }

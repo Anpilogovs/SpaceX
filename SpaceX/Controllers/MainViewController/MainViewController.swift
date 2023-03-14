@@ -1,34 +1,28 @@
 
 import UIKit
 
-class MainViewController: UICollectionViewController {
-    
-    
+class MainViewController: UIViewController {
 
+    // MARK: - Collection View
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: MainViewController.createLayout())
+        collectionView.backgroundColor = .black
+        collectionView.bounces = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        self.registeCells()
-        
-       
+        configView()
     }
     
-    init() {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(450))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
-        super.init(collectionViewLayout: layout)
+    func configView() {
+        self.title = "Main View"
+        self.view.backgroundColor = .black
+        setupCollectionView()
     }
-    
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
 }
 

@@ -20,11 +20,10 @@ enum LabelText: String {
 
 extension UILabel {
     
-    convenience init(text: LabelText, textDefult: String = "") {
-        self.init()
+    convenience init(text: LabelText, size: CGFloat){
+        self.init(frame: .zero)
         self.text = text.rawValue
-        self.text = textDefult
-        self.font = .labGrotesqueThin()
+        self.font = UIFont.boldSystemFont(ofSize: size)
         self.textColor = .white
     }
 }

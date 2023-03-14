@@ -6,13 +6,16 @@ class HeaderRocketViewCell: UIView {
     
     private var nameRocket: UILabel = {
         let label = UILabel()
-        label.text = "NAme Rocket"
+        label.text = "Name Rocket"
+        label.backgroundColor = .brown
         return label
     }()
     
     private var settinButton: UIButton = {
         let button = UIButton()
-//        button.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
+        button.setImage(UIImage(named: "Setting"), for: .normal)
+        button.titleLabel?.text = "Hello"
+        button.backgroundColor = .blue
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
     }()
@@ -20,7 +23,7 @@ class HeaderRocketViewCell: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupUIView()
+        setupView()
         setupContraints()
     }
     
@@ -28,7 +31,7 @@ class HeaderRocketViewCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUIView() {
+    private func setupView() {
         addSubview(nameRocket)
         addSubview(settinButton)
     }
@@ -45,7 +48,8 @@ extension HeaderRocketViewCell {
         }
         
         settinButton.snp.makeConstraints { constraints in
-            constraints.top.trailing.equalToSuperview().inset(16)
+            constraints.trailing.top.equalToSuperview().inset(8)
+            constraints.height.width.equalTo(40)
         }
     }
 }
