@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainRocketViewCell: UIView {
+class InfoView: UIView {
 
     var hightLabel = UILabel(text: .hight, size: 14)
     var diameterLabel = UILabel(text: .diameter, size: 14)
@@ -33,21 +33,10 @@ class MainRocketViewCell: UIView {
     }
 }
 
-extension MainRocketViewCell {
+extension InfoView {
     private func setupContraints() {
         hightLabel.snp.makeConstraints { constraints in
             constraints.center.equalToSuperview().inset(5)
         }
-//        diameterLabel.snp.makeConstraints { constraints in
-//            constraints.top.equalTo(hightLabel).inset(10)
-//        }
-//
-//        massLabel.snp.makeConstraints { constraints in
-//            constraints.center.equalToSuperview()
-//        }
-//
-//        payloadLabel.snp.makeConstraints { constraints in
-//            constraints.center.equalToSuperview()
-//        }
     }
 }

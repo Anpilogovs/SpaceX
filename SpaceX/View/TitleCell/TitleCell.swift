@@ -7,31 +7,34 @@
 
 import UIKit
 
-class HeaderRocketCell: UICollectionViewCell {
+class TitleCell: UICollectionViewCell {
     
     public static var identifier: String {
         get {
-            return "HeaderRocketCell"
+            return "TitleCell"
         }
     }
     
-    private var backFirstView = HeaderRocketViewCell()
+    let titleView = TitleView(frame: .zero)
     
+    
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
        
-        addSubview(backFirstView)
-        setupContraints()
+        contentView.addSubview(titleView)
         backgroundColor = .black
+        setupContraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-extension HeaderRocketCell {
+
+extension TitleCell {
     private func setupContraints() {
-        backFirstView.snp.makeConstraints { constraints in
+        titleView.snp.makeConstraints { constraints in
             constraints.trailing.leading.bottom.top.equalToSuperview()
         }
     }

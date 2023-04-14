@@ -7,15 +7,15 @@
 
 import UIKit
 
-class MainRocketCell: UICollectionViewCell {
+class InfoCell: UICollectionViewCell {
     
     public static var identifier: String {
         get {
-            return "MainRocketCell"
+            return "InfoCell"
         }
     }
 
-    var mainBackView = MainRocketViewCell()
+    var infoView = InfoView(frame: .zero)
     
     
     override init(frame: CGRect) {
@@ -30,15 +30,15 @@ class MainRocketCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        addSubview(mainBackView)
-        mainBackView.addBorder(color: .black, width: 5)
-        mainBackView.round()
+        contentView.addSubview(infoView)
+        infoView.addBorder(color: .black, width: 5)
+        infoView.round()
     }
 }
 
-extension MainRocketCell {
+extension InfoCell {
     private func setupContraint() {
-        mainBackView.snp.makeConstraints { constraints in
+        infoView.snp.makeConstraints { constraints in
             constraints.leading.top.trailing.bottom.equalToSuperview()
         }
     }

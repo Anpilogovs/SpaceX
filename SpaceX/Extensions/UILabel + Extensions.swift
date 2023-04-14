@@ -13,9 +13,9 @@ enum LabelText: String {
     case burnTimeFirst = "Burn Time Sec"
     case secondStage =  "Second Stage"
     case hight = "22"
-    case diameter = "Диаметер"
-    case mass = "Macca"
-    case payload = "Полезная нагрузка"
+    case diameter = "Diameter"
+    case mass = "Mass"
+    case payload = "Payload"
 }
 
 extension UILabel {

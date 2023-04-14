@@ -11,12 +11,11 @@
 		F345A40529BE0CEA00354ED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A40429BE0CEA00354ED1 /* SceneDelegate.swift */; };
 		F345A40F29BE0CEC00354ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F345A40D29BE0CEC00354ED1 /* LaunchScreen.storyboard */; };
 		F345A41A29BE0D1700354ED1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41829BE0D1700354ED1 /* MainViewController.swift */; };
-		F345A41B29BE0D1700354ED1 /* MainView + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41929BE0D1700354ED1 /* MainView + CollectionView.swift */; };
+		F345A41B29BE0D1700354ED1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41929BE0D1700354ED1 /* DataSource.swift */; };
 		F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */; };
-		F345A42229BE0D4000354ED1 /* UICompositionLayout + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41E29BE0D4000354ED1 /* UICompositionLayout + Extensions.swift */; };
 		F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */; };
 		F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */; };
-		F345A42829BE0D4600354ED1 /* RocketCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42629BE0D4600354ED1 /* RocketCollectionViewModel.swift */; };
+		F345A42829BE0D4600354ED1 /* FooterRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42629BE0D4600354ED1 /* FooterRocketViewModel.swift */; };
 		F345A42929BE0D4600354ED1 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42729BE0D4600354ED1 /* RocketViewModel.swift */; };
 		F345A42C29BE0D4D00354ED1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42B29BE0D4D00354ED1 /* Observable.swift */; };
 		F345A43029BE0D5300354ED1 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42E29BE0D5300354ED1 /* APICaller.swift */; };
@@ -28,15 +27,19 @@
 		F345A43F29BE0D6700354ED1 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F345A43929BE0D6700354ED1 /* LabGrotesque-Bold.ttf */; };
 		F345A44029BE0D6700354ED1 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F345A43B29BE0D6700354ED1 /* LabGrotesque-Medium.ttf */; };
 		F345A44229BE0D7C00354ED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F345A44129BE0D7C00354ED1 /* .gitignore */; };
-		F345A44E29BE0D9D00354ED1 /* MainRocketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44529BE0D9D00354ED1 /* MainRocketViewCell.swift */; };
-		F345A44F29BE0D9D00354ED1 /* MainRocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44629BE0D9D00354ED1 /* MainRocketCell.swift */; };
-		F345A45029BE0D9D00354ED1 /* FooterRocketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44829BE0D9D00354ED1 /* FooterRocketViewCell.swift */; };
-		F345A45129BE0D9D00354ED1 /* FooterRocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44929BE0D9D00354ED1 /* FooterRocketCell.swift */; };
-		F345A45229BE0D9D00354ED1 /* HeaderRockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44B29BE0D9D00354ED1 /* HeaderRockCell.swift */; };
-		F345A45329BE0D9D00354ED1 /* HeaderRocketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44C29BE0D9D00354ED1 /* HeaderRocketViewCell.swift */; };
-		F345A45429BE0D9D00354ED1 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44D29BE0D9D00354ED1 /* ImageCell.swift */; };
+		F345A44E29BE0D9D00354ED1 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44529BE0D9D00354ED1 /* InfoView.swift */; };
+		F345A44F29BE0D9D00354ED1 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44629BE0D9D00354ED1 /* InfoCell.swift */; };
+		F345A45029BE0D9D00354ED1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44829BE0D9D00354ED1 /* MainView.swift */; };
+		F345A45129BE0D9D00354ED1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44929BE0D9D00354ED1 /* MainCell.swift */; };
+		F345A45229BE0D9D00354ED1 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44B29BE0D9D00354ED1 /* TitleCell.swift */; };
+		F345A45329BE0D9D00354ED1 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44C29BE0D9D00354ED1 /* TitleView.swift */; };
+		F345A45429BE0D9D00354ED1 /* BackgroundImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */; };
 		F345A45729BE0E4100354ED1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F345A45629BE0E4100354ED1 /* SnapKit */; };
 		F345A45A29BE132E00354ED1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F345A45929BE132E00354ED1 /* SDWebImage */; };
+		F37F86DD29E33D9B009645E4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F86DC29E33D9B009645E4 /* MainViewModel.swift */; };
+		F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */; };
+		F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */; };
+		F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,12 +49,11 @@
 		F345A40E29BE0CEC00354ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F345A41029BE0CEC00354ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F345A41829BE0D1700354ED1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		F345A41929BE0D1700354ED1 /* MainView + CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainView + CollectionView.swift"; sourceTree = "<group>"; };
+		F345A41929BE0D1700354ED1 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
-		F345A41E29BE0D4000354ED1 /* UICompositionLayout + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICompositionLayout + Extensions.swift"; sourceTree = "<group>"; };
 		F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
-		F345A42629BE0D4600354ED1 /* RocketCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewModel.swift; sourceTree = "<group>"; };
+		F345A42629BE0D4600354ED1 /* FooterRocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterRocketViewModel.swift; sourceTree = "<group>"; };
 		F345A42729BE0D4600354ED1 /* RocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		F345A42B29BE0D4D00354ED1 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F345A42E29BE0D5300354ED1 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
@@ -63,13 +65,17 @@
 		F345A43929BE0D6700354ED1 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		F345A43B29BE0D6700354ED1 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		F345A44129BE0D7C00354ED1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F345A44529BE0D9D00354ED1 /* MainRocketViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRocketViewCell.swift; sourceTree = "<group>"; };
-		F345A44629BE0D9D00354ED1 /* MainRocketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRocketCell.swift; sourceTree = "<group>"; };
-		F345A44829BE0D9D00354ED1 /* FooterRocketViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterRocketViewCell.swift; sourceTree = "<group>"; };
-		F345A44929BE0D9D00354ED1 /* FooterRocketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterRocketCell.swift; sourceTree = "<group>"; };
-		F345A44B29BE0D9D00354ED1 /* HeaderRockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderRockCell.swift; sourceTree = "<group>"; };
-		F345A44C29BE0D9D00354ED1 /* HeaderRocketViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderRocketViewCell.swift; sourceTree = "<group>"; };
-		F345A44D29BE0D9D00354ED1 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		F345A44529BE0D9D00354ED1 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		F345A44629BE0D9D00354ED1 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		F345A44829BE0D9D00354ED1 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F345A44929BE0D9D00354ED1 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		F345A44B29BE0D9D00354ED1 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		F345A44C29BE0D9D00354ED1 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageCell.swift; sourceTree = "<group>"; };
+		F37F86DC29E33D9B009645E4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketViewController.swift; sourceTree = "<group>"; };
+		F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Esntensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		F345A41629BE0D1700354ED1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F37F871829E9BFE8009645E4 /* LaunchRocketViewController */,
 				F345A41729BE0D1700354ED1 /* MainViewController */,
 			);
 			path = Controllers;
@@ -133,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F345A41829BE0D1700354ED1 /* MainViewController.swift */,
-				F345A41929BE0D1700354ED1 /* MainView + CollectionView.swift */,
+				F345A41929BE0D1700354ED1 /* DataSource.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -142,9 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */,
-				F345A41E29BE0D4000354ED1 /* UICompositionLayout + Extensions.swift */,
 				F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */,
 				F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */,
+				F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,7 +159,8 @@
 		F345A42529BE0D4600354ED1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F345A42629BE0D4600354ED1 /* RocketCollectionViewModel.swift */,
+				F37F86DC29E33D9B009645E4 /* MainViewModel.swift */,
+				F345A42629BE0D4600354ED1 /* FooterRocketViewModel.swift */,
 				F345A42729BE0D4600354ED1 /* RocketViewModel.swift */,
 			);
 			path = ViewModel;
@@ -187,11 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F345A43629BE0D6700354ED1 /* Assets.xcassets */,
-				F345A43729BE0D6700354ED1 /* LabGrotesque-Thin.ttf */,
-				F345A43829BE0D6700354ED1 /* LabGrotesque-Regular.ttf */,
-				F345A43929BE0D6700354ED1 /* LabGrotesque-Bold.ttf */,
 				F345A43A29BE0D6700354ED1 /* Fonts */,
-				F345A43B29BE0D6700354ED1 /* LabGrotesque-Medium.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -199,6 +203,10 @@
 		F345A43A29BE0D6700354ED1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F345A43729BE0D6700354ED1 /* LabGrotesque-Thin.ttf */,
+				F345A43829BE0D6700354ED1 /* LabGrotesque-Regular.ttf */,
+				F345A43929BE0D6700354ED1 /* LabGrotesque-Bold.ttf */,
+				F345A43B29BE0D6700354ED1 /* LabGrotesque-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -206,39 +214,64 @@
 		F345A44329BE0D9D00354ED1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F345A44D29BE0D9D00354ED1 /* ImageCell.swift */,
-				F345A44429BE0D9D00354ED1 /* MainBlockCell */,
-				F345A44729BE0D9D00354ED1 /* FooterRocketCell */,
-				F345A44A29BE0D9D00354ED1 /* HeaderBlockCell */,
+				F37F872029E9EE30009645E4 /* BackgroundImageCell */,
+				F345A44A29BE0D9D00354ED1 /* TitleCell */,
+				F345A44429BE0D9D00354ED1 /* InfoCell */,
+				F345A44729BE0D9D00354ED1 /* MainCells */,
+				F37F872129E9EE99009645E4 /* LaunchButtomCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F345A44429BE0D9D00354ED1 /* MainBlockCell */ = {
+		F345A44429BE0D9D00354ED1 /* InfoCell */ = {
 			isa = PBXGroup;
 			children = (
-				F345A44529BE0D9D00354ED1 /* MainRocketViewCell.swift */,
-				F345A44629BE0D9D00354ED1 /* MainRocketCell.swift */,
+				F345A44629BE0D9D00354ED1 /* InfoCell.swift */,
+				F345A44529BE0D9D00354ED1 /* InfoView.swift */,
 			);
-			path = MainBlockCell;
+			path = InfoCell;
 			sourceTree = "<group>";
 		};
-		F345A44729BE0D9D00354ED1 /* FooterRocketCell */ = {
+		F345A44729BE0D9D00354ED1 /* MainCells */ = {
 			isa = PBXGroup;
 			children = (
-				F345A44829BE0D9D00354ED1 /* FooterRocketViewCell.swift */,
-				F345A44929BE0D9D00354ED1 /* FooterRocketCell.swift */,
+				F345A44929BE0D9D00354ED1 /* MainCell.swift */,
+				F345A44829BE0D9D00354ED1 /* MainView.swift */,
 			);
-			path = FooterRocketCell;
+			path = MainCells;
 			sourceTree = "<group>";
 		};
-		F345A44A29BE0D9D00354ED1 /* HeaderBlockCell */ = {
+		F345A44A29BE0D9D00354ED1 /* TitleCell */ = {
 			isa = PBXGroup;
 			children = (
-				F345A44B29BE0D9D00354ED1 /* HeaderRockCell.swift */,
-				F345A44C29BE0D9D00354ED1 /* HeaderRocketViewCell.swift */,
+				F345A44B29BE0D9D00354ED1 /* TitleCell.swift */,
+				F345A44C29BE0D9D00354ED1 /* TitleView.swift */,
 			);
-			path = HeaderBlockCell;
+			path = TitleCell;
+			sourceTree = "<group>";
+		};
+		F37F871829E9BFE8009645E4 /* LaunchRocketViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */,
+			);
+			path = LaunchRocketViewController;
+			sourceTree = "<group>";
+		};
+		F37F872029E9EE30009645E4 /* BackgroundImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */,
+			);
+			path = BackgroundImageCell;
+			sourceTree = "<group>";
+		};
+		F37F872129E9EE99009645E4 /* LaunchButtomCell */ = {
+			isa = PBXGroup;
+			children = (
+				F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */,
+			);
+			path = LaunchButtomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,24 +357,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F345A45229BE0D9D00354ED1 /* HeaderRockCell.swift in Sources */,
+				F345A45229BE0D9D00354ED1 /* TitleCell.swift in Sources */,
 				F345A43129BE0D5300354ED1 /* NetworkConstants.swift in Sources */,
-				F345A44E29BE0D9D00354ED1 /* MainRocketViewCell.swift in Sources */,
+				F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */,
+				F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */,
+				F345A44E29BE0D9D00354ED1 /* InfoView.swift in Sources */,
 				F345A42C29BE0D4D00354ED1 /* Observable.swift in Sources */,
 				F345A42929BE0D4600354ED1 /* RocketViewModel.swift in Sources */,
-				F345A45429BE0D9D00354ED1 /* ImageCell.swift in Sources */,
-				F345A45329BE0D9D00354ED1 /* HeaderRocketViewCell.swift in Sources */,
-				F345A42829BE0D4600354ED1 /* RocketCollectionViewModel.swift in Sources */,
+				F345A45429BE0D9D00354ED1 /* BackgroundImageCell.swift in Sources */,
+				F345A45329BE0D9D00354ED1 /* TitleView.swift in Sources */,
+				F345A42829BE0D4600354ED1 /* FooterRocketViewModel.swift in Sources */,
 				F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */,
 				F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */,
 				F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */,
-				F345A45129BE0D9D00354ED1 /* FooterRocketCell.swift in Sources */,
+				F345A45129BE0D9D00354ED1 /* MainCell.swift in Sources */,
 				F345A43429BE0D6000354ED1 /* RocketModel.swift in Sources */,
-				F345A41B29BE0D1700354ED1 /* MainView + CollectionView.swift in Sources */,
+				F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */,
+				F345A41B29BE0D1700354ED1 /* DataSource.swift in Sources */,
+				F37F86DD29E33D9B009645E4 /* MainViewModel.swift in Sources */,
 				F345A43029BE0D5300354ED1 /* APICaller.swift in Sources */,
-				F345A42229BE0D4000354ED1 /* UICompositionLayout + Extensions.swift in Sources */,
-				F345A45029BE0D9D00354ED1 /* FooterRocketViewCell.swift in Sources */,
-				F345A44F29BE0D9D00354ED1 /* MainRocketCell.swift in Sources */,
+				F345A45029BE0D9D00354ED1 /* MainView.swift in Sources */,
+				F345A44F29BE0D9D00354ED1 /* InfoCell.swift in Sources */,
 				F345A41A29BE0D1700354ED1 /* MainViewController.swift in Sources */,
 				F345A40329BE0CEA00354ED1 /* AppDelegate.swift in Sources */,
 				F345A40529BE0CEA00354ED1 /* SceneDelegate.swift in Sources */,

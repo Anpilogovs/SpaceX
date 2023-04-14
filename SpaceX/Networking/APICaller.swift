@@ -3,30 +3,41 @@ import Foundation
 
 enum NetworkError: Error {
     case urlError
-    case canNotParseData
+    case invalidResponse
+    case invalidData
+    case decodingError(Error)
 }
 
 class APICaller {
-    
-    static func getRocketInfo(
-        completionHandler: @escaping (_ result: Result<RocketModel,NetworkError>) -> Void) {
+    static func getRocketInfo(completionHandler: @escaping (Result<[Rocket], NetworkError>) -> Void) {
+        let urlString = NetworkConstants.shared.serverAdressRockets
         
-            let urlString = NetworkConstants.shared.serverAdressRockets
-            
-            guard let url = URL(string: urlString) else {
-                completionHandler(.failure(.urlError))
+        guard let url = URL(string: urlString) else {
+            completionHandler(.failure(.urlError))
+            return
+        }
+        
+        let urlSession = URLSession(configuration: .default)
+        
+        urlSession.dataTask(with: url) { data, response, error in
+            if error != nil {
+                completionHandler(.failure(.invalidResponse))
                 return
             }
             
-            URLSession.shared.dataTask(with: url) { dataResponse, urlResponse, error in
-                if error == nil,
-                   let data = dataResponse,
-                   let resultData = try? JSONDecoder().decode(RocketModel.self,
-                    from: data) {
-                    completionHandler(.success(resultData))
-                }  else {
-                    completionHandler(.failure(.canNotParseData))
-                }
-            }.resume()
-        }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200,
+                  let data = data else {
+                completionHandler(.failure(.invalidResponse))
+                return
+            }
+            
+            do {
+                let rocketModel = try JSONDecoder().decode([Rocket].self, from: data)
+                completionHandler(.success(rocketModel))
+            } catch let error {
+                completionHandler(.failure(.decodingError(error)))
+            }
+        }.resume()
+    }
 }

@@ -2,7 +2,7 @@
 import SnapKit
 import UIKit
 
-class HeaderRocketViewCell: UIView {
+class TitleView: UIView {
     
     private var nameRocket: UILabel = {
         let label = UILabel()
@@ -41,12 +41,12 @@ class HeaderRocketViewCell: UIView {
     }
 }
 
-extension HeaderRocketViewCell {
+extension TitleView {
     private func setupContraints() {
         nameRocket.snp.makeConstraints { constraints in
             constraints.leading.top.equalToSuperview().inset(16)
         }
-        
+
         settinButton.snp.makeConstraints { constraints in
             constraints.trailing.top.equalToSuperview().inset(8)
             constraints.height.width.equalTo(40)

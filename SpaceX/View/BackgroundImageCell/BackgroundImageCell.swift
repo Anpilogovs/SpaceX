@@ -2,7 +2,7 @@
 import SDWebImage
 import UIKit
 
-class ImageCell: UICollectionViewCell {
+class BackgroundImageCell: UICollectionViewCell {
     
     public static var identifier: String {
         get {
@@ -24,7 +24,7 @@ class ImageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(viewModel: RocketCollectionCellViewModel) {
-        self.rocketImageView.sd_setImage(with: viewModel.imageUrl)
-    }
+//    func setupCell(viewModel: RocketCollectionCellViewModel) {
+//        self.rocketImageView.sd_setImage(with: viewModel.imageUrl)
+//    }
 }

@@ -5,9 +5,7 @@ class NetworkConstants {
     
     public static var shared: NetworkConstants = NetworkConstants()
     
-    private init() {
-        //Singletone
-    }
+    private init() {}
     
     public var serverAdressLaunch: String {
         get {
