@@ -8,7 +8,6 @@ enum Section {
     case mainInfoAboutRocket
     case launchButton
     
-    
     var numberIfItems: Int {
         switch self {
         case .backgroundImage:
@@ -27,12 +26,12 @@ enum Section {
 
 class MainViewController: UIViewController {
     
-    let viewsModel: [Section] = [.backgroundImage, .title, .infoParamRocket, .mainInfoAboutRocket, .launchButton]
+    let ScreenSectionsArray: [Section] = [.backgroundImage, .title, .infoParamRocket, .mainInfoAboutRocket, .launchButton]
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
-     var viewModel = RocketViewModel()
- 
+    var viewModel = RocketViewModel()
+    
     // MARK: - Collection View
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
@@ -51,32 +50,32 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchRocket()
+        viewModel.fetchRockets()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupContraints()
     }
-
+    
     func configView() {
         self.view.backgroundColor = .black
         view.addSubview(collectionView)
     }
-
+    
     private func registeCells() {
-           collectionView.dataSource =  self
-           collectionView.register(BackgroundImageCell.self, forCellWithReuseIdentifier: BackgroundImageCell.identifier)
-           collectionView.register(TitleCell.self, forCellWithReuseIdentifier: TitleCell.identifier)
-           collectionView.register(InfoCell.self, forCellWithReuseIdentifier: InfoCell.identifier)
-           collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
-           collectionView.register(LaunchButtonCollectionViewCell.self, forCellWithReuseIdentifier: LaunchButtonCollectionViewCell.identifier)
-       }
-        
-    lazy var layout: UICollectionViewLayout = {
+        collectionView.dataSource =  self
+        collectionView.register(BackgroundImageCell.self, forCellWithReuseIdentifier: BackgroundImageCell.identifier)
+        collectionView.register(TitleCell.self, forCellWithReuseIdentifier: TitleCell.identifier)
+        collectionView.register(InfoCell.self, forCellWithReuseIdentifier: InfoCell.identifier)
+        collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
+        collectionView.register(LaunchButtonCollectionViewCell.self, forCellWithReuseIdentifier: LaunchButtonCollectionViewCell.identifier)
+    }
+    
+    private lazy var layout: UICollectionViewLayout = {
         UICollectionViewCompositionalLayout { (section, enviroments) -> NSCollectionLayoutSection? in
             
-            let sectionType =  self.viewsModel[section]
+            let sectionType =  self.ScreenSectionsArray[section]
             
             switch sectionType {
                 
@@ -93,7 +92,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .fractionalHeight(0.1))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-                 return section
+                return section
             case .infoParamRocket:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.6))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -113,13 +112,10 @@ class MainViewController: UIViewController {
                 section.contentInsets.top = -50
                 return section
             case .launchButton:
-                //item
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(74.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-               //group
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .fractionalHeight(0.2))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-               //section
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             }
@@ -134,7 +130,7 @@ extension MainViewController {
     }
     
     func initViewModel() {
-        viewModel.fetchRocket()
+        viewModel.fetchRockets()
     }
     
     func observeEvent() {
@@ -143,18 +139,18 @@ extension MainViewController {
             
             switch event {
             case .loading:
-            self.activityIndicator.startAnimating()
+                self.activityIndicator.startAnimating()
                 print("Rocket loading....")
             case .stopLoading:
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self.activityIndicator.stopAnimating()
-                    }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.activityIndicator.stopAnimating()
+                }
                 print("Stop loading....")
             case .dataLoaded:
                 print("Data loading....")
                 DispatchQueue.main.async {
-                            self.collectionView.reloadData()
-                        }
+                    self.collectionView.reloadData()
+                }
                 print(self.viewModel.rockets)
             case .error(let error):
                 print(error)
@@ -179,13 +175,13 @@ extension MainViewController {
 
 import SwiftUI
 struct ContentViewPreviews: PreviewProvider {
-
+    
     struct ContainterView: UIViewControllerRepresentable {
         
         func makeUIViewController(context: Context) -> some UIViewController {
             UINavigationController(rootViewController: MainViewController())
         }
-
+        
         func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
     }
     static var previews: some View {

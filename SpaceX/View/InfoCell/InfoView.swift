@@ -11,7 +11,7 @@ class InfoView: UIView {
 
     var hightLabel = UILabel(text: .hight, size: 14)
     var diameterLabel = UILabel(text: .diameter, size: 14)
-    var massLabel = UILabel(text: .mass, size: 14 )
+    var massLabel = UILabel(text: .weight, size: 14 )
     var payloadLabel = UILabel(text: .payload, size: 14)
     
     override init(frame: CGRect) {
@@ -29,7 +29,7 @@ class InfoView: UIView {
         addSubview(hightLabel)
         addSubview(diameterLabel)
         addSubview(massLabel)
-        addSubview(payloadLabel)
+//        addSubview(payloadLabel)
     }
 }
 

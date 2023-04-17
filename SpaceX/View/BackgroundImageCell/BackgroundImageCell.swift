@@ -6,7 +6,7 @@ class BackgroundImageCell: UICollectionViewCell {
     
     static let identifier = "BackgroundImageCell"
     
-    var viewModel: BackgroundImageViewModel? {
+    var backGroundViewModel: BackgroundImageViewModel? {
         didSet {
             configure()
         }
@@ -30,7 +30,7 @@ class BackgroundImageCell: UICollectionViewCell {
     }
     
     private func configure() {
-        guard let viewModel = viewModel else { return }
+        guard let viewModel = backGroundViewModel else { return }
         if let imageUrl = viewModel.imageUrl {
             rocketImageView.sd_setImage(with: imageUrl)
         } else {

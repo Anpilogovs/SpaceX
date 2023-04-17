@@ -6,7 +6,7 @@ import UIKit
 class MainView: UIView {
     
     // UI elements
-    let firstLaunchLabel = UILabel(text: .firstLaunch, size: 20)
+    var firstLaunchLabel = UILabel(text: .firstLaunch, size: 20)
     let countryLabel = UILabel(text: .country, size: 20)
     let costOfLaunchLabel = UILabel(text: .costOfLaunch, size: 20)
     let firstStageTitleLabel = UILabel(text: .firstStage, size: 25)

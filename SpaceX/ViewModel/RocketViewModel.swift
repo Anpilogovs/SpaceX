@@ -1,9 +1,3 @@
-//
-//  RocketViewModel.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 10.03.2023.
-//
 
 import Foundation
 
@@ -12,12 +6,13 @@ final class RocketViewModel {
     var rockets : [Rocket] = []
     
     var eventHangler: ((_ event: Event) -> Void)? //Data Binding Closure
-  
-    func fetchRocket() {
+    
+    func fetchRockets() {
         self.eventHangler?(.loading)
-        APICaller.fetchRockets { result in
+        APIManager.shared.request(modelType: [Rocket].self,
+                                  type: EndPointItems.rockets) { response in
             self.eventHangler?(.stopLoading)
-            switch result {
+            switch response {
             case .success(let data):
                 self.rockets = data
                 self.eventHangler?(.dataLoaded)
@@ -25,6 +20,10 @@ final class RocketViewModel {
                 self.eventHangler?(.error(error))
             }
         }
+    }
+    
+    func isIndexValid(_ index: Int) -> Bool {
+        return index >= 0 && index < self.rockets.count
     }
 }
 

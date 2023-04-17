@@ -1,7 +1,6 @@
 
 import UIKit
 
-
 enum LabelText: String {
     
     case firstLaunch = "First Launch"
@@ -12,10 +11,31 @@ enum LabelText: String {
     case fuelAmountTonsFirst =  "Fuel Amount Tons"
     case burnTimeFirst = "Burn Time Sec"
     case secondStage =  "Second Stage"
-    case hight = "22"
-    case diameter = "Diameter"
-    case mass = "Mass"
-    case payload = "Payload"
+    case diameter,weight,hight,payload
+}
+
+
+// MARK: - Sec Ton
+enum UnitType: String {
+    case m
+    case ft
+    case kg
+    case lb
+    case ton
+    case sec
+}
+
+// MARK: - Unit Types for segmented control
+enum UnitTypes: String, CaseIterable {
+    case height, diameter, weight, payload
+    var description: [String] {
+        switch self {
+        case .height:   return [UnitType.m.rawValue, UnitType.ft.rawValue]
+        case .diameter: return [UnitType.m.rawValue, UnitType.ft.rawValue]
+        case .weight:   return [UnitType.kg.rawValue, UnitType.lb.rawValue]
+        case .payload:  return [UnitType.kg.rawValue, UnitType.lb.rawValue]
+        }
+    }
 }
 
 extension UILabel {

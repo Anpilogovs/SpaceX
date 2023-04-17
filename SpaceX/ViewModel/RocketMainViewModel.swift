@@ -16,9 +16,8 @@ class RocketMainViewModel {
         self.rocket = rocket
     }
     
-    // Свойства модели данных, которые будут использоваться в ячейке
-    var name: String {
-        return rocket.name
+    var firstLaunch: String {
+        return "\(LabelText.firstLaunch.rawValue) \(rocket.firstFlight)"
     }
     
     var country: String {

@@ -7,15 +7,17 @@
 
 import UIKit
 
+
+
 class TitleCell: UICollectionViewCell {
-    
+
     public static var identifier: String {
         get {
             return "TitleCell"
         }
     }
     
-    var rocket: Rocket? {
+    var titleViewModel: RocketTitleViewModel? {
         didSet {
             titleRocketConfiguration()
         }
@@ -35,15 +37,21 @@ class TitleCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func titleRocketConfiguration() {
-        guard let rocket = rocket else {
-            return
-        }
-        titleView.nameRocket.text = rocket.name
+    
+    func didTapSettinButton() {
+        titleView.delegate = self
     }
     
     
+    func titleRocketConfiguration() {
+        guard let titleViewModel = titleViewModel else {
+            return
+        }
+        titleView.nameRocket.text = titleViewModel.nameRocket
+    }
 }
+
+
 
 extension TitleCell {
     private func setupContraints() {

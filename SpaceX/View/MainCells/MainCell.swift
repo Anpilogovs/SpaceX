@@ -10,7 +10,7 @@ class MainCell: UICollectionViewCell {
         }
     }
     
-    var viewModel: RocketMainViewModel? {
+    var mainViewModel: RocketMainViewModel? {
         didSet {
             bindViewModel()
         }
@@ -34,16 +34,16 @@ class MainCell: UICollectionViewCell {
     }
 
     private func bindViewModel() {
-        guard let viewModel = viewModel else { return }
-        mainView.firstLaunchLabel.text = viewModel.rocket.firstFlight
+        guard let viewModel = mainViewModel else { return }
+        mainView.firstLaunchLabel.text = (mainView.firstLaunchLabel.text.map({$0 + " "}) ?? "") + "\(viewModel.rocket.firstFlight)"
         mainView.countryLabel.text = viewModel.country
         mainView.costOfLaunchLabel.text = "\(viewModel.costPerLaunch )"
         mainView.enginesFirstLabel.text = "\(viewModel.rocket.firstStage.engines)"
         mainView.fuelAmountTonsFirstLabel.text = "\(viewModel.rocket.firstStage.fuelAmountTons)"
-        mainView.burnTimeFirstLabel.text = "\(viewModel.rocket.firstStage.burnTimeSEC )"
+        mainView.burnTimeFirstLabel.text = String(describing: viewModel.rocket.firstStage.burnTimeSEC)
         mainView.enginesSecondLabel.text = "\(viewModel.rocket.secondStage.engines )"
         mainView.fuelAmountTonsSecondLabel.text = "\(viewModel.rocket.secondStage.fuelAmountTons )"
-        mainView.burnTimeSecondLabel.text = "\(viewModel.rocket.secondStage.burnTimeSEC )"
+        mainView.burnTimeSecondLabel.text = String(describing: viewModel.rocket.secondStage.burnTimeSEC)
     }
 }
 

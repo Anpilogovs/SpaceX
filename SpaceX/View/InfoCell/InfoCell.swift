@@ -14,13 +14,17 @@ class InfoCell: UICollectionViewCell {
             return "InfoCell"
         }
     }
-
-    var infoView = InfoView(frame: .zero)
     
+    var infoViewModel: InfoViewModel? {
+        didSet {
+            infoBindViewModel()
+        }
+    }
+    
+   private var infoView = InfoView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         setupView()
         setupContraint()
     }
@@ -33,6 +37,16 @@ class InfoCell: UICollectionViewCell {
         contentView.addSubview(infoView)
         infoView.addBorder(color: .black, width: 5)
         infoView.round()
+    }
+    
+  private func infoBindViewModel() {
+        guard let infoViewModel = infoViewModel else {
+            return
+        }
+        infoView.hightLabel.text = infoViewModel.height
+        infoView.diameterLabel.text = infoViewModel.diameter
+      infoView.massLabel.text = infoViewModel.mass
+        
     }
 }
 
