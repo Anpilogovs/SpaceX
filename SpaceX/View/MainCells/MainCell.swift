@@ -10,6 +10,12 @@ class MainCell: UICollectionViewCell {
         }
     }
     
+    var viewModel: RocketMainViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
+    
     private var mainView = MainView(frame: .zero)
 
     override init(frame: CGRect) {
@@ -27,16 +33,17 @@ class MainCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(with viewModel: Rocket) {
-        mainView.firstLaunchLabel.text = viewModel.country
+    private func bindViewModel() {
+        guard let viewModel = viewModel else { return }
+        mainView.firstLaunchLabel.text = viewModel.rocket.firstFlight
         mainView.countryLabel.text = viewModel.country
         mainView.costOfLaunchLabel.text = "\(viewModel.costPerLaunch )"
-        mainView.enginesFirstLabel.text = "\(viewModel.firstStage.engines )"
-        mainView.fuelAmountTonsFirstLabel.text = "\(viewModel.firstStage.fuelAmountTons )"
-        mainView.burnTimeFirstLabel.text = "\(viewModel.firstStage.burnTimeSec )"
-        mainView.enginesSecondLabel.text = "\(viewModel.secondStage.engines )"
-        mainView.fuelAmountTonsSecondLabel.text = "\(viewModel.secondStage.fuelAmountTons )"
-        mainView.burnTimeSecondLabel.text = "\(viewModel.secondStage.burnTimeSec )"
+        mainView.enginesFirstLabel.text = "\(viewModel.rocket.firstStage.engines)"
+        mainView.fuelAmountTonsFirstLabel.text = "\(viewModel.rocket.firstStage.fuelAmountTons)"
+        mainView.burnTimeFirstLabel.text = "\(viewModel.rocket.firstStage.burnTimeSEC )"
+        mainView.enginesSecondLabel.text = "\(viewModel.rocket.secondStage.engines )"
+        mainView.fuelAmountTonsSecondLabel.text = "\(viewModel.rocket.secondStage.fuelAmountTons )"
+        mainView.burnTimeSecondLabel.text = "\(viewModel.rocket.secondStage.burnTimeSEC )"
     }
 }
 

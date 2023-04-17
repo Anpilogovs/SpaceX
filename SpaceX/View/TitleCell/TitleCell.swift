@@ -15,10 +15,14 @@ class TitleCell: UICollectionViewCell {
         }
     }
     
+    var rocket: Rocket? {
+        didSet {
+            titleRocketConfiguration()
+        }
+    }
+    
     let titleView = TitleView(frame: .zero)
     
-    
-   
     override init(frame: CGRect) {
         super.init(frame: frame)
        
@@ -30,6 +34,15 @@ class TitleCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func titleRocketConfiguration() {
+        guard let rocket = rocket else {
+            return
+        }
+        titleView.nameRocket.text = rocket.name
+    }
+    
+    
 }
 
 extension TitleCell {

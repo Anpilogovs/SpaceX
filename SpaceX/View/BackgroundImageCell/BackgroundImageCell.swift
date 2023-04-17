@@ -4,27 +4,45 @@ import UIKit
 
 class BackgroundImageCell: UICollectionViewCell {
     
-    public static var identifier: String {
-        get {
-            return "ImageCell"
+    static let identifier = "BackgroundImageCell"
+    
+    var viewModel: BackgroundImageViewModel? {
+        didSet {
+            configure()
         }
     }
 
     let rocketImageView: UIImageView = {
-        let image = UIImageView()
-        return image
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
+        contentView.addSubview(rocketImageView)
+        setupContraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func setupCell(viewModel: RocketCollectionCellViewModel) {
-//        self.rocketImageView.sd_setImage(with: viewModel.imageUrl)
-//    }
+    private func configure() {
+        guard let viewModel = viewModel else { return }
+        if let imageUrl = viewModel.imageUrl {
+            rocketImageView.sd_setImage(with: imageUrl)
+        } else {
+            rocketImageView.image = nil
+        }
+    }
+}
+
+extension BackgroundImageCell {
+    private func setupContraints() {
+        rocketImageView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+    }
 }

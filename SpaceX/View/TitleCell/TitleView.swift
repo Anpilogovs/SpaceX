@@ -4,14 +4,14 @@ import UIKit
 
 class TitleView: UIView {
     
-    private var nameRocket: UILabel = {
+     var nameRocket: UILabel = {
         let label = UILabel()
         label.text = "Name Rocket"
         label.backgroundColor = .brown
         return label
     }()
     
-    private var settinButton: UIButton = {
+     var settinButton: UIButton = {
         let button = UIButton()
         var image = UIImage(named: "setting")?.withTintColor(.white)
         button.setImage(image, for: .normal)

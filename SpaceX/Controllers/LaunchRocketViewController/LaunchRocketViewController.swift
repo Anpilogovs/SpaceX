@@ -14,8 +14,6 @@ class LaunchRocketViewController: UIViewController {
         setupViews()
     }
     
-    
-    
     private func setupViews() {
         let plusImage = UIImage(systemName: "arrow.backward")
         let barButtonItem = UIBarButtonItem(image: plusImage, style: .plain, target: self, action: #selector(backToMainSreenButton))

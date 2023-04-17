@@ -7,19 +7,33 @@
 
 import Foundation
 
-class RocketViewModel {
+final class RocketViewModel {
     
-    var rocketInfo : [Rocket] = []
+    var rockets : [Rocket] = []
+    
+    var eventHangler: ((_ event: Event) -> Void)? //Data Binding Closure
   
-    func getData() {
-        APICaller.getRocketInfo { result in
+    func fetchRocket() {
+        self.eventHangler?(.loading)
+        APICaller.fetchRockets { result in
+            self.eventHangler?(.stopLoading)
             switch result {
             case .success(let data):
-                self.rocketInfo = data
-                print("Rocket Lauch count: \(data.count)")
+                self.rockets = data
+                self.eventHangler?(.dataLoaded)
             case .failure(let error):
-                print(error)
+                self.eventHangler?(.error(error))
             }
         }
+    }
+}
+
+extension RocketViewModel {
+    
+    enum Event {
+        case loading
+        case stopLoading
+        case dataLoaded
+        case error(Error?)
     }
 }

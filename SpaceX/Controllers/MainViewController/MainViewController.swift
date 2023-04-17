@@ -31,12 +31,8 @@ class MainViewController: UIViewController {
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
-    //ViewModel:
-    var viewModel: MainViewModel = MainViewModel()
-    //varibales:
-//    var cellDataSource: [FooterRocketViewModel] = []
-//
-//
+     var viewModel = RocketViewModel()
+ 
     // MARK: - Collection View
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
@@ -50,12 +46,12 @@ class MainViewController: UIViewController {
         view.backgroundColor = .yellow
         configView()
         registeCells()
-        bindViewModel()
+        configuration()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.getData()
+        viewModel.fetchRocket()
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,35 +72,7 @@ class MainViewController: UIViewController {
            collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
            collectionView.register(LaunchButtonCollectionViewCell.self, forCellWithReuseIdentifier: LaunchButtonCollectionViewCell.identifier)
        }
-    
-    func bindViewModel() {
-        viewModel.isLoading.bind { [weak self] isLoading in
-            guard let self = self, let isLoading = isLoading  else {
-                return
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                if isLoading {
-                    self.activityIndicator.startAnimating()
-                } else {
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-        }
         
-        viewModel.cellDataSource.bind { [weak self] rocket in
-            guard let self = self, let rocket = rocket else {
-                return
-            }
-            self.collectionView.reloadData()
-        }
-        
-        func reloadInputViews() {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
-
     lazy var layout: UICollectionViewLayout = {
         UICollectionViewCompositionalLayout { (section, enviroments) -> NSCollectionLayoutSection? in
             
@@ -120,13 +88,10 @@ class MainViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             case .title:
-                //item
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(74.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-               //group
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .fractionalHeight(0.2))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .fractionalHeight(0.1))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-               //section
                 let section = NSCollectionLayoutSection(group: group)
                  return section
             case .infoParamRocket:
@@ -163,6 +128,42 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
+    func configuration() {
+        initViewModel()
+        observeEvent()
+    }
+    
+    func initViewModel() {
+        viewModel.fetchRocket()
+    }
+    
+    func observeEvent() {
+        viewModel.eventHangler = { [weak self] event in
+            guard let self = self else { return }
+            
+            switch event {
+            case .loading:
+            self.activityIndicator.startAnimating()
+                print("Rocket loading....")
+            case .stopLoading:
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.activityIndicator.stopAnimating()
+                    }
+                print("Stop loading....")
+            case .dataLoaded:
+                print("Data loading....")
+                DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                print(self.viewModel.rockets)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+extension MainViewController {
     private func setupContraints() {
         view.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -176,18 +177,18 @@ extension MainViewController {
     }
 }
 
-//import SwiftUI
-//struct ContentViewPreviews: PreviewProvider {
-//
-//    struct ContainterView: UIViewControllerRepresentable {
-//        
-//        func makeUIViewController(context: Context) -> some UIViewController {
-//            UINavigationController(rootViewController: MainViewController())
-//        }
-//
-//        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
-//    }
-//    static var previews: some View {
-//        ContainterView().edgesIgnoringSafeArea(.all)
-//    }
-//}
+import SwiftUI
+struct ContentViewPreviews: PreviewProvider {
+
+    struct ContainterView: UIViewControllerRepresentable {
+        
+        func makeUIViewController(context: Context) -> some UIViewController {
+            UINavigationController(rootViewController: MainViewController())
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
+    }
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
+    }
+}

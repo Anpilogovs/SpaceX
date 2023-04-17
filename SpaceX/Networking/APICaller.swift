@@ -9,7 +9,7 @@ enum NetworkError: Error {
 }
 
 class APICaller {
-    static func getRocketInfo(completionHandler: @escaping (Result<[Rocket], NetworkError>) -> Void) {
+    static func fetchRockets(completionHandler: @escaping (Result<[Rocket], NetworkError>) -> Void) {
         let urlString = NetworkConstants.shared.serverAdressRockets
         
         guard let url = URL(string: urlString) else {
@@ -39,5 +39,6 @@ class APICaller {
                 completionHandler(.failure(.decodingError(error)))
             }
         }.resume()
+      
     }
 }
