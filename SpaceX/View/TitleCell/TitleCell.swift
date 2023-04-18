@@ -39,7 +39,7 @@ class TitleCell: UICollectionViewCell {
     
     
     func didTapSettinButton() {
-        titleView.delegate = self
+//        titleView.delegate = self
     }
     
     

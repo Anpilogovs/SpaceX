@@ -35,6 +35,7 @@
 		F345A45A29BE132E00354ED1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F345A45929BE132E00354ED1 /* SDWebImage */; };
 		F354520C29EDB07B00BB6959 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520B29EDB07B00BB6959 /* EndPointType.swift */; };
 		F354520E29EDE74400BB6959 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520D29EDE74400BB6959 /* SettingsViewController.swift */; };
+		F354521029EF326C00BB6959 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */; };
 		F367545229ED5AF7000C77B1 /* BackgroundImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545129ED5AF7000C77B1 /* BackgroundImageViewModel.swift */; };
 		F367545429ED60AF000C77B1 /* RocketMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545329ED60AF000C77B1 /* RocketMainViewModel.swift */; };
 		F367545629ED6FB0000C77B1 /* RocketTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545529ED6FB0000C77B1 /* RocketTitleViewModel.swift */; };
@@ -73,6 +74,7 @@
 		F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageCell.swift; sourceTree = "<group>"; };
 		F354520B29EDB07B00BB6959 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F354520D29EDE74400BB6959 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		F367545129ED5AF7000C77B1 /* BackgroundImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageViewModel.swift; sourceTree = "<group>"; };
 		F367545329ED60AF000C77B1 /* RocketMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMainViewModel.swift; sourceTree = "<group>"; };
 		F367545529ED6FB0000C77B1 /* RocketTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTitleViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */,
 				F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */,
 				F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */,
+				F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				F345A43429BE0D6000354ED1 /* RocketModel.swift in Sources */,
 				F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */,
 				F345A41B29BE0D1700354ED1 /* DataSource.swift in Sources */,
+				F354521029EF326C00BB6959 /* UIStackView + Extensions.swift in Sources */,
 				F345A43029BE0D5300354ED1 /* APIManager.swift in Sources */,
 				F345A45029BE0D9D00354ED1 /* MainView.swift in Sources */,
 				F345A44F29BE0D9D00354ED1 /* InfoCell.swift in Sources */,

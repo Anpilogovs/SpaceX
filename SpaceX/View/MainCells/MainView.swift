@@ -6,7 +6,7 @@ import UIKit
 class MainView: UIView {
     
     // UI elements
-    var firstLaunchLabel = UILabel(text: .firstLaunch, size: 20)
+    let launchLabel = UILabel(text: .firstLaunch, size: 20)
     let countryLabel = UILabel(text: .country, size: 20)
     let costOfLaunchLabel = UILabel(text: .costOfLaunch, size: 20)
     let firstStageTitleLabel = UILabel(text: .firstStage, size: 25)
@@ -17,9 +17,23 @@ class MainView: UIView {
     let enginesSecondLabel = UILabel(text: .engines, size: 20)
     let fuelAmountTonsSecondLabel = UILabel(text: .fuelAmountTonsFirst, size: 20)
     let burnTimeSecondLabel = UILabel(text: .burnTimeFirst, size: 20)
-   
+    
+    // New label for displaying from value from Model
+    let firstLaunchValueLabel = UILabel()
+    let countryValueLabel = UILabel()
+    let costOfValueLabel = UILabel()
+    let enginesFirstValueLabel = UILabel()
+    let fuelAmountTonsFirstValueLabel = UILabel()
+    let burnTimeFirstValueLabel = UILabel()
+    let enginesSecondValueLabel = UILabel()
+    let fuelAmountTonsSecondValueLabel = UILabel()
+    let burnTimeSecondValueLabel = UILabel()
+    
     // Stack views
     private let mainStackView = UIStackView()
+    private let leftStackView = UIStackView()
+    private let rightStackView = UIStackView()
+
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -33,32 +47,68 @@ class MainView: UIView {
     }
     // MARK:  Set up UI elements
     private func setUpView() {
+        leftStackView.setUpProperties(axis: .vertical,
+                                      spacing: 10,
+                                      distribution: .equalSpacing)
+        
+        leftStackView.addArrangedSubview(launchLabel)
+        leftStackView.addArrangedSubview(countryLabel)
+        leftStackView.addArrangedSubview(costOfLaunchLabel)
+        leftStackView.addArrangedSubview(firstStageTitleLabel)
+        leftStackView.addArrangedSubview(enginesFirstLabel)
+        leftStackView.addArrangedSubview(fuelAmountTonsFirstLabel)
+        leftStackView.addArrangedSubview(burnTimeFirstLabel)
+        leftStackView.addArrangedSubview(secondStageTitleLabel)
+        leftStackView.addArrangedSubview(enginesSecondLabel)
+        leftStackView.addArrangedSubview(fuelAmountTonsSecondLabel)
+        leftStackView.addArrangedSubview(burnTimeSecondLabel)
+      
+        
+        rightStackView.setUpProperties(axis: .vertical,
+                                       spacing: 10,
+                                       distribution: .equalSpacing)
 
-        mainStackView.axis = .vertical
-        mainStackView.spacing = 5
-        mainStackView.distribution = .equalSpacing
-     
-        mainStackView.addArrangedSubview(firstLaunchLabel)
-        mainStackView.addArrangedSubview(countryLabel)
-        mainStackView.addArrangedSubview(costOfLaunchLabel)
-        mainStackView.addArrangedSubview(firstStageTitleLabel)
-        mainStackView.addArrangedSubview(enginesFirstLabel)
-        mainStackView.addArrangedSubview(fuelAmountTonsFirstLabel)
-        mainStackView.addArrangedSubview(burnTimeFirstLabel)
-        mainStackView.addArrangedSubview(secondStageTitleLabel)
-        mainStackView.addArrangedSubview(enginesSecondLabel)
-        mainStackView.addArrangedSubview(fuelAmountTonsSecondLabel)
-        mainStackView.addArrangedSubview(burnTimeSecondLabel)
-     
+        rightStackView.addArrangedSubview(firstLaunchValueLabel)
+        rightStackView.addArrangedSubview(countryValueLabel)
+        rightStackView.addArrangedSubview(costOfValueLabel)
+        rightStackView.addArrangedSubview(enginesFirstValueLabel)
+        rightStackView.addArrangedSubview(fuelAmountTonsFirstValueLabel)
+        rightStackView.addArrangedSubview(burnTimeFirstValueLabel)
+        rightStackView.addArrangedSubview(enginesSecondValueLabel)
+        rightStackView.addArrangedSubview(fuelAmountTonsSecondValueLabel)
+        rightStackView.addArrangedSubview(burnTimeSecondValueLabel)
+        
+        mainStackView.addArrangedSubview(leftStackView)
+        mainStackView.addArrangedSubview(rightStackView)
+        
+        mainStackView.setUpProperties(axis: .horizontal,
+                                      spacing: 50,
+                                      distribution: .equalSpacing)
+                
+        
         addSubview(mainStackView)
     }
 }
 
+// MARK: - Constraints
 extension MainView {
-        private func addConstraints() {
-            mainStackView.snp.makeConstraints { make in
-                make.edges.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
-            }
+    private func addConstraints() {
+        // MARK: - Constraints
+        // Ограничения для UIStackView
+        mainStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top:20,
+                                                             left: 20,
+                                                             bottom: 20,
+                                                             right: 20))
         }
+        
+//        leftStackView.snp.makeConstraints { make in
+//            make.width.equalToSuperview().multipliedBy(0.5).offset(-10)
+//        }
+//
+//        rightStackView.snp.makeConstraints { make in
+//            make.width.equalToSuperview().multipliedBy(0.5).offset(-10)
+//        }
     }
+}
 

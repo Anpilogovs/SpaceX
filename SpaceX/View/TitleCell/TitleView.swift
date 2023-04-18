@@ -2,13 +2,13 @@
 import SnapKit
 import UIKit
 
-protocol TitleViewDelegate: AnyObject {
-    func didTapTitleViewButton()
-}
+//protocol TitleViewDelegate: AnyObject {
+//    func didTapTitleViewButton()
+//}
 
 class TitleView: UIView {
     
-    weak var delegate: TitleViewDelegate?
+//    weak var delegate: TitleViewDelegate?
     
      var nameRocket: UILabel = {
         let label = UILabel()
@@ -43,7 +43,7 @@ class TitleView: UIView {
     }
     
     @objc private func didTapSettingButton() {
-        delegate?.didTapTitleViewButton()
+//        delegate?.didTapTitleViewButton()
     }
 }
 
