@@ -7,9 +7,13 @@
 
 import UIKit
 
-
+protocol TitleCellButtonDelegate: AnyObject {
+    func didTapTitleButton(in cell: TitleCell)
+}
 
 class TitleCell: UICollectionViewCell {
+    
+    weak var delegate: TitleCellButtonDelegate?
 
     public static var identifier: String {
         get {
@@ -17,7 +21,7 @@ class TitleCell: UICollectionViewCell {
         }
     }
     
-    var titleViewModel: RocketTitleViewModel? {
+    var titleViewModel: TitleRocketViewModel? {
         didSet {
             titleRocketConfiguration()
         }
@@ -31,15 +35,18 @@ class TitleCell: UICollectionViewCell {
         contentView.addSubview(titleView)
         backgroundColor = .black
         setupContraints()
+        
+        titleView.settinButton.addTarget(self, action: #selector(didTapSettinButton), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    @objc
     func didTapSettinButton() {
-//        titleView.delegate = self
+        print("Hello")
+        delegate?.didTapTitleButton(in: self)
     }
     
     

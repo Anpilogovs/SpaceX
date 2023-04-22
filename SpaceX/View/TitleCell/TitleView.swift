@@ -2,14 +2,8 @@
 import SnapKit
 import UIKit
 
-//protocol TitleViewDelegate: AnyObject {
-//    func didTapTitleViewButton()
-//}
-
 class TitleView: UIView {
-    
-//    weak var delegate: TitleViewDelegate?
-    
+        
      var nameRocket: UILabel = {
         let label = UILabel()
         label.text = "Name Rocket"

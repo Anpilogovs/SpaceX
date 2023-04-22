@@ -15,7 +15,7 @@
 		F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */; };
 		F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */; };
 		F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */; };
-		F345A42929BE0D4600354ED1 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42729BE0D4600354ED1 /* RocketViewModel.swift */; };
+		F345A42929BE0D4600354ED1 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */; };
 		F345A43029BE0D5300354ED1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42E29BE0D5300354ED1 /* APIManager.swift */; };
 		F345A43429BE0D6000354ED1 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A43329BE0D6000354ED1 /* RocketModel.swift */; };
 		F345A43C29BE0D6700354ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F345A43629BE0D6700354ED1 /* Assets.xcassets */; };
@@ -30,16 +30,16 @@
 		F345A45129BE0D9D00354ED1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44929BE0D9D00354ED1 /* MainCell.swift */; };
 		F345A45229BE0D9D00354ED1 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44B29BE0D9D00354ED1 /* TitleCell.swift */; };
 		F345A45329BE0D9D00354ED1 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44C29BE0D9D00354ED1 /* TitleView.swift */; };
-		F345A45429BE0D9D00354ED1 /* BackgroundImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */; };
+		F345A45429BE0D9D00354ED1 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A44D29BE0D9D00354ED1 /* ImageCell.swift */; };
 		F345A45729BE0E4100354ED1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F345A45629BE0E4100354ED1 /* SnapKit */; };
 		F345A45A29BE132E00354ED1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F345A45929BE132E00354ED1 /* SDWebImage */; };
 		F354520C29EDB07B00BB6959 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520B29EDB07B00BB6959 /* EndPointType.swift */; };
 		F354520E29EDE74400BB6959 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520D29EDE74400BB6959 /* SettingsViewController.swift */; };
 		F354521029EF326C00BB6959 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */; };
-		F367545229ED5AF7000C77B1 /* BackgroundImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545129ED5AF7000C77B1 /* BackgroundImageViewModel.swift */; };
-		F367545429ED60AF000C77B1 /* RocketMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545329ED60AF000C77B1 /* RocketMainViewModel.swift */; };
-		F367545629ED6FB0000C77B1 /* RocketTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545529ED6FB0000C77B1 /* RocketTitleViewModel.swift */; };
-		F367545829ED7313000C77B1 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545729ED7313000C77B1 /* InfoViewModel.swift */; };
+		F367545229ED5AF7000C77B1 /* ImageRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */; };
+		F367545429ED60AF000C77B1 /* MainRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */; };
+		F367545629ED6FB0000C77B1 /* TitleRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */; };
+		F367545829ED7313000C77B1 /* InfoRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */; };
 		F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */; };
 		F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */; };
 		F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */; };
@@ -56,7 +56,7 @@
 		F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
-		F345A42729BE0D4600354ED1 /* RocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
+		F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		F345A42E29BE0D5300354ED1 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F345A43329BE0D6000354ED1 /* RocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		F345A43629BE0D6700354ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,14 +71,14 @@
 		F345A44929BE0D9D00354ED1 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		F345A44B29BE0D9D00354ED1 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		F345A44C29BE0D9D00354ED1 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageCell.swift; sourceTree = "<group>"; };
+		F345A44D29BE0D9D00354ED1 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		F354520B29EDB07B00BB6959 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F354520D29EDE74400BB6959 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
-		F367545129ED5AF7000C77B1 /* BackgroundImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageViewModel.swift; sourceTree = "<group>"; };
-		F367545329ED60AF000C77B1 /* RocketMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMainViewModel.swift; sourceTree = "<group>"; };
-		F367545529ED6FB0000C77B1 /* RocketTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTitleViewModel.swift; sourceTree = "<group>"; };
-		F367545729ED7313000C77B1 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRocketViewModel.swift; sourceTree = "<group>"; };
+		F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRocketViewModel.swift; sourceTree = "<group>"; };
+		F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRocketViewModel.swift; sourceTree = "<group>"; };
+		F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRocketViewModel.swift; sourceTree = "<group>"; };
 		F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketViewController.swift; sourceTree = "<group>"; };
 		F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Esntensions.swift"; sourceTree = "<group>"; };
@@ -167,11 +167,11 @@
 		F345A42529BE0D4600354ED1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F345A42729BE0D4600354ED1 /* RocketViewModel.swift */,
-				F367545129ED5AF7000C77B1 /* BackgroundImageViewModel.swift */,
-				F367545329ED60AF000C77B1 /* RocketMainViewModel.swift */,
-				F367545529ED6FB0000C77B1 /* RocketTitleViewModel.swift */,
-				F367545729ED7313000C77B1 /* InfoViewModel.swift */,
+				F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */,
+				F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */,
+				F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */,
+				F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */,
+				F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 		F37F872029E9EE30009645E4 /* BackgroundImageCell */ = {
 			isa = PBXGroup;
 			children = (
-				F345A44D29BE0D9D00354ED1 /* BackgroundImageCell.swift */,
+				F345A44D29BE0D9D00354ED1 /* ImageCell.swift */,
 			);
 			path = BackgroundImageCell;
 			sourceTree = "<group>";
@@ -366,18 +366,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F367545829ED7313000C77B1 /* InfoViewModel.swift in Sources */,
-				F367545629ED6FB0000C77B1 /* RocketTitleViewModel.swift in Sources */,
+				F367545829ED7313000C77B1 /* InfoRocketViewModel.swift in Sources */,
+				F367545629ED6FB0000C77B1 /* TitleRocketViewModel.swift in Sources */,
 				F345A45229BE0D9D00354ED1 /* TitleCell.swift in Sources */,
 				F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */,
 				F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */,
 				F345A44E29BE0D9D00354ED1 /* InfoView.swift in Sources */,
-				F367545429ED60AF000C77B1 /* RocketMainViewModel.swift in Sources */,
-				F345A42929BE0D4600354ED1 /* RocketViewModel.swift in Sources */,
-				F345A45429BE0D9D00354ED1 /* BackgroundImageCell.swift in Sources */,
+				F367545429ED60AF000C77B1 /* MainRocketViewModel.swift in Sources */,
+				F345A42929BE0D4600354ED1 /* GeneralViewModel.swift in Sources */,
+				F345A45429BE0D9D00354ED1 /* ImageCell.swift in Sources */,
 				F354520C29EDB07B00BB6959 /* EndPointType.swift in Sources */,
 				F345A45329BE0D9D00354ED1 /* TitleView.swift in Sources */,
-				F367545229ED5AF7000C77B1 /* BackgroundImageViewModel.swift in Sources */,
+				F367545229ED5AF7000C77B1 /* ImageRocketViewModel.swift in Sources */,
 				F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */,
 				F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */,
 				F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */,

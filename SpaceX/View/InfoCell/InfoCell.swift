@@ -15,13 +15,13 @@ class InfoCell: UICollectionViewCell {
         }
     }
     
-    var infoViewModel: InfoViewModel? {
+    var infoViewModel: InfoRocketViewModel? {
         didSet {
             infoBindViewModel()
         }
     }
     
-   private var infoView = InfoView(frame: .zero)
+    private var infoView = InfoView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,13 +39,13 @@ class InfoCell: UICollectionViewCell {
         infoView.round()
     }
     
-  private func infoBindViewModel() {
+    private func infoBindViewModel() {
         guard let infoViewModel = infoViewModel else {
             return
         }
-        infoView.hightLabel.text = infoViewModel.height
-        infoView.diameterLabel.text = infoViewModel.diameter
-      infoView.massLabel.text = infoViewModel.mass
+        infoView.hightValueLabel.text = infoViewModel.formattedHeight()
+        infoView.diameterLabel.text = infoViewModel.formattedDiameter()
+        infoView.massValueLabel.text = infoViewModel.formattedMass()
         
     }
 }

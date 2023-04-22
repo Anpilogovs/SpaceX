@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
-    var viewModel = RocketViewModel()
+    var viewModel = GenaralViewModel()
     
     // MARK: - Collection View
     lazy var collectionView: UICollectionView = {
@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
     
     private func registeCells() {
         collectionView.dataSource =  self
-        collectionView.register(BackgroundImageCell.self, forCellWithReuseIdentifier: BackgroundImageCell.identifier)
+        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.identifier)
         collectionView.register(TitleCell.self, forCellWithReuseIdentifier: TitleCell.identifier)
         collectionView.register(InfoCell.self, forCellWithReuseIdentifier: InfoCell.identifier)
         collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
@@ -153,7 +153,7 @@ extension MainViewController {
                 }
                 print(self.viewModel.rockets)
             case .error(let error):
-                print(error)
+                print(error as Any)
             }
         }
     }

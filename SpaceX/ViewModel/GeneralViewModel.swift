@@ -1,7 +1,7 @@
 
 import Foundation
 
-final class RocketViewModel {
+final class GenaralViewModel {
     
     var rockets : [Rocket] = []
     
@@ -27,7 +27,7 @@ final class RocketViewModel {
     }
 }
 
-extension RocketViewModel {
+extension GenaralViewModel {
     
     enum Event {
         case loading

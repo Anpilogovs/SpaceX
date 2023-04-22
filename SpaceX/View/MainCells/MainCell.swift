@@ -10,7 +10,7 @@ class MainCell: UICollectionViewCell {
         }
     }
     
-    var mainViewModel: RocketMainViewModel? {
+    var mainViewModel: MainRocketViewModel? {
         didSet {
             bindViewModel()
         }
@@ -35,9 +35,9 @@ class MainCell: UICollectionViewCell {
 
     private func bindViewModel() {
         guard let viewModel = mainViewModel else { return }
-        mainView.firstLaunchValueLabel.text = "\(viewModel.rocket.firstFlight)"
+        mainView.firstLaunchValueLabel.text = "\(String(describing: viewModel.rocket.firstFlight))"
         mainView.countryValueLabel.text = viewModel.country
-        mainView.costOfValueLabel.text = "\(viewModel.costPerLaunch )"
+        mainView.costOfValueLabel.text = String(describing: viewModel.costPerLaunch)
         mainView.enginesFirstValueLabel.text = "\(viewModel.rocket.firstStage.engines)"
         mainView.fuelAmountTonsFirstValueLabel.text = "\(viewModel.rocket.firstStage.fuelAmountTons)"
         mainView.burnTimeFirstValueLabel.text = String(describing: viewModel.rocket.firstStage.burnTimeSEC)

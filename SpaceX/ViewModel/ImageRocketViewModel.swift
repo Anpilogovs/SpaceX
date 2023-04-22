@@ -1,14 +1,7 @@
-//
-//  BackgroundViewModel.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 17.04.2023.
-//
 
 import Foundation
 
-
-class BackgroundImageViewModel {
+class ImageRocketViewModel {
     
     let imageUrl: URL?
     

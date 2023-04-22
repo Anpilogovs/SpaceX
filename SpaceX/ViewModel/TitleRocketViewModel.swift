@@ -1,14 +1,8 @@
-//
-//  RocketTitleViewModel.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 17.04.2023.
-//
 
 import Foundation
 
 
-class RocketTitleViewModel {
+class TitleRocketViewModel {
     
     var rocket: Rocket
     

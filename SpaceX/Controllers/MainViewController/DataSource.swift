@@ -19,10 +19,10 @@ extension MainViewController: UICollectionViewDataSource {
         
         switch section {
         case .backgroundImage:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BackgroundImageCell.identifier, for: indexPath) as? BackgroundImageCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell else { return UICollectionViewCell() }
             if viewModel.isIndexValid(indexPath.item) {
             let imageRocket = viewModel.rockets[indexPath.item]
-            let viewModel = BackgroundImageViewModel(rocket: imageRocket)
+            let viewModel = ImageRocketViewModel(rocket: imageRocket)
             cell.backGroundViewModel = viewModel
             }
             return cell
@@ -30,15 +30,16 @@ extension MainViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCell.identifier, for: indexPath) as? TitleCell else { return UICollectionViewCell() }
             if viewModel.isIndexValid(indexPath.item) {
             let titleRocket = viewModel.rockets[indexPath.item]
-            let viewModel = RocketTitleViewModel(rocket: titleRocket)
+            let viewModel = TitleRocketViewModel(rocket: titleRocket)
             cell.titleViewModel = viewModel
             }
+            cell.delegate = self
             return cell
         case .infoParamRocket:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InfoCell.identifier, for: indexPath) as? InfoCell else { return UICollectionViewCell() }
             if viewModel.isIndexValid(indexPath.item) {
                 let InfoRocket = viewModel.rockets[indexPath.item]
-                let viewModel = InfoViewModel(rocket: InfoRocket)
+                let viewModel = InfoRocketViewModel(rocket: InfoRocket)
                 cell.infoViewModel = viewModel
             }
             return cell
@@ -46,7 +47,7 @@ extension MainViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.identifier, for: indexPath) as? MainCell else { return UICollectionViewCell() }
             if viewModel.isIndexValid(indexPath.item) {
             let MainRocket = viewModel.rockets[indexPath.item]
-            let viewModel = RocketMainViewModel(rocket: MainRocket)
+            let viewModel = MainRocketViewModel(rocket: MainRocket)
             cell.mainViewModel = viewModel
             }
             return cell
@@ -58,12 +59,12 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-//extension TitleCell: TitleViewDelegate {
-//    func didTapTitleViewButton() {
-//        let controllerSettings = SettingsViewController()
-//        navigationController?.pushViewController(controllerSettings, animated: true)
-//    }
-//}
+extension MainViewController: TitleCellButtonDelegate {
+    func didTapTitleButton(in cell: TitleCell) {
+        let controllerSetting = SettingsViewController()
+        navigationController?.pushViewController(controllerSetting, animated: true)
+    }
+}
 
 extension MainViewController: LaunchButtonDelegate {
     func didTapLaunchButton(in cell: LaunchButtonCollectionViewCell) {

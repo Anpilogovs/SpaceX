@@ -2,11 +2,11 @@
 import SDWebImage
 import UIKit
 
-class BackgroundImageCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell {
     
     static let identifier = "BackgroundImageCell"
     
-    var backGroundViewModel: BackgroundImageViewModel? {
+    var backGroundViewModel: ImageRocketViewModel? {
         didSet {
             configure()
         }
@@ -39,7 +39,7 @@ class BackgroundImageCell: UICollectionViewCell {
     }
 }
 
-extension BackgroundImageCell {
+extension ImageCell {
     private func setupContraints() {
         rocketImageView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()

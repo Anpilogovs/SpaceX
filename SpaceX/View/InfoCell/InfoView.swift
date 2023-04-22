@@ -9,16 +9,28 @@ import UIKit
 
 class InfoView: UIView {
 
-    var hightLabel = UILabel(text: .hight, size: 14)
-    var diameterLabel = UILabel(text: .diameter, size: 14)
-    var massLabel = UILabel(text: .weight, size: 14 )
-    var payloadLabel = UILabel(text: .payload, size: 14)
+ 
+    var heightLabel = UILabel(text: .hight, size: 14)
+    var diameterLabel = UILabel()
+    var massLabel = UILabel()
+    var payloadLabel = UILabel()
+    
+    //Value
+    var hightValueLabel = UILabel()
+    var diameterValueLabel = UILabel()
+    var massValueLabel = UILabel()
+    var payloadValueLabel = UILabel()
+    
+    
+  private var row1StackView = UIStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .brown
+    
         setupView()
         setupContraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -26,17 +38,23 @@ class InfoView: UIView {
     }
     
     private func setupView() {
-        addSubview(hightLabel)
+        addSubview(heightLabel)
+        addSubview(hightValueLabel)
+        
         addSubview(diameterLabel)
         addSubview(massLabel)
-//        addSubview(payloadLabel)
+        addSubview(payloadLabel)
     }
 }
 
 extension InfoView {
     private func setupContraints() {
-        hightLabel.snp.makeConstraints { constraints in
-            constraints.center.equalToSuperview().inset(5)
+
+        hightValueLabel.snp.makeConstraints { constraints in
+            constraints.top.centerX.equalToSuperview().inset(15)
+        }
+        heightLabel.snp.makeConstraints { constraints in
+            constraints.center.equalToSuperview()
         }
     }
 }

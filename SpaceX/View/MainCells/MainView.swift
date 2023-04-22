@@ -101,14 +101,6 @@ extension MainView {
                                                              bottom: 20,
                                                              right: 20))
         }
-        
-//        leftStackView.snp.makeConstraints { make in
-//            make.width.equalToSuperview().multipliedBy(0.5).offset(-10)
-//        }
-//
-//        rightStackView.snp.makeConstraints { make in
-//            make.width.equalToSuperview().multipliedBy(0.5).offset(-10)
-//        }
     }
 }
 
