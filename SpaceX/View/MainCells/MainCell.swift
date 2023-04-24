@@ -12,7 +12,7 @@ class MainCell: UICollectionViewCell {
     
     var mainViewModel: MainRocketViewModel? {
         didSet {
-            bindViewModel()
+            mainBindViewModel()
         }
     }
     
@@ -33,7 +33,7 @@ class MainCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func bindViewModel() {
+    private func mainBindViewModel() {
         guard let viewModel = mainViewModel else { return }
         mainView.firstLaunchValueLabel.text = "\(String(describing: viewModel.rocket.firstFlight))"
         mainView.countryValueLabel.text = viewModel.country

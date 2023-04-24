@@ -1,9 +1,3 @@
-//
-//  FrirstBlockCell.swift
-//  SpaceX
-//
-//  Created by Сергей Анпилогов on 10.03.2023.
-//
 
 import UIKit
 
@@ -23,7 +17,7 @@ class TitleCell: UICollectionViewCell {
     
     var titleViewModel: TitleRocketViewModel? {
         didSet {
-            titleRocketConfiguration()
+            titleBindViewModel()
         }
     }
     
@@ -50,15 +44,13 @@ class TitleCell: UICollectionViewCell {
     }
     
     
-    func titleRocketConfiguration() {
+   private func titleBindViewModel() {
         guard let titleViewModel = titleViewModel else {
             return
         }
         titleView.nameRocket.text = titleViewModel.nameRocket
     }
 }
-
-
 
 extension TitleCell {
     private func setupContraints() {

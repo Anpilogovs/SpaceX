@@ -10,13 +10,13 @@ import UIKit
 class InfoView: UIView {
 
  
-    var heightLabel = UILabel(text: .hight, size: 14)
+    var heightLabel = UILabel()
     var diameterLabel = UILabel()
     var massLabel = UILabel()
     var payloadLabel = UILabel()
     
     //Value
-    var hightValueLabel = UILabel()
+    var heightValueLabel = UILabel()
     var diameterValueLabel = UILabel()
     var massValueLabel = UILabel()
     var payloadValueLabel = UILabel()
@@ -39,22 +39,52 @@ class InfoView: UIView {
     
     private func setupView() {
         addSubview(heightLabel)
-        addSubview(hightValueLabel)
-        
         addSubview(diameterLabel)
         addSubview(massLabel)
         addSubview(payloadLabel)
+        
+        addSubview(heightValueLabel)
+        addSubview(diameterValueLabel)
+        addSubview(massValueLabel)
+        addSubview(payloadValueLabel)
+        
+//               heightLabel.text = "Height"
+//               diameterLabel.text = "Diameter"
+//               massLabel.text = "Mass"
     }
 }
 
 extension InfoView {
     private func setupContraints() {
-
-        hightValueLabel.snp.makeConstraints { constraints in
-            constraints.top.centerX.equalToSuperview().inset(15)
-        }
+        
         heightLabel.snp.makeConstraints { constraints in
-            constraints.center.equalToSuperview()
+            constraints.top.equalToSuperview().inset(15)
+            constraints.leading.equalToSuperview().inset(20)
+        }
+        
+        heightValueLabel.snp.makeConstraints { constraints in
+            constraints.centerY.equalTo(heightLabel)
+            constraints.trailing.equalToSuperview().inset(20)
+        }
+        
+        diameterLabel.snp.makeConstraints { constraints in
+            constraints.top.equalTo(heightLabel.snp.bottom).offset(15)
+            constraints.leading.equalToSuperview().inset(20)
+        }
+        diameterValueLabel.snp.makeConstraints { constraints in
+            constraints.centerY.equalTo(diameterLabel)
+            constraints.trailing.equalToSuperview().inset(20)
+        }
+        
+        massLabel.snp.makeConstraints { constraints in
+            constraints.top.equalTo(diameterLabel.snp.bottom).offset(15)
+            constraints.leading.equalToSuperview().inset(20)
+        }
+        massValueLabel.snp.makeConstraints { constraints in
+            constraints.centerY.equalTo(massLabel)
+            constraints.trailing.equalToSuperview().inset(20)
+            constraints.bottom.equalToSuperview().inset(15)
         }
     }
 }
+

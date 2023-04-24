@@ -43,8 +43,8 @@ class InfoCell: UICollectionViewCell {
         guard let infoViewModel = infoViewModel else {
             return
         }
-        infoView.hightValueLabel.text = infoViewModel.formattedHeight()
-        infoView.diameterLabel.text = infoViewModel.formattedDiameter()
+        infoView.heightValueLabel.text = infoViewModel.formattedHeight()
+        infoView.diameterValueLabel.text = infoViewModel.formattedDiameter()
         infoView.massValueLabel.text = infoViewModel.formattedMass()
         
     }
