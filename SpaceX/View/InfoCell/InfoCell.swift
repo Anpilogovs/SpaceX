@@ -1,8 +1,8 @@
 //
-//  MainRockCellCollectionViewCell.swift
+//  InfoCell.swift
 //  SpaceX
 //
-//  Created by Сергей Анпилогов on 10.03.2023.
+//  Created by Сергей Анпилогов on 14.04.2023.
 //
 
 import UIKit
@@ -15,9 +15,12 @@ class InfoCell: UICollectionViewCell {
         }
     }
     
-    var infoViewModel: InfoRocketViewModel? {
+    var infoViewModel: InfoCellViewModel? {
         didSet {
-            infoBindViewModel()
+            guard let viewModel = infoViewModel else { return }
+            infoView.heightValueLabel.text = viewModel.paramHeight
+            infoView.diameterValueLabel.text = viewModel.paramDiameter
+            infoView.massValueLabel.text = viewModel.payloadWeights
         }
     }
     
@@ -37,16 +40,6 @@ class InfoCell: UICollectionViewCell {
         contentView.addSubview(infoView)
         infoView.addBorder(color: .black, width: 5)
         infoView.round()
-    }
-    
-    private func infoBindViewModel() {
-        guard let infoViewModel = infoViewModel else {
-            return
-        }
-        infoView.heightValueLabel.text = infoViewModel.formattedHeight()
-        infoView.diameterValueLabel.text = infoViewModel.formattedDiameter()
-        infoView.massValueLabel.text = infoViewModel.formattedMass()
-        
     }
 }
 

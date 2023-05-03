@@ -1,17 +1,23 @@
+//
+//  TitleView.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 14.04.2023.
+//
 
 import SnapKit
 import UIKit
 
 class TitleView: UIView {
-        
-     var nameRocket: UILabel = {
+    
+    var nameRocket: UILabel = {
         let label = UILabel()
         label.text = "Name Rocket"
         label.backgroundColor = .brown
         return label
     }()
     
-     var settinButton: UIButton = {
+    var settinButton: UIButton = {
         let button = UIButton()
         var image = UIImage(named: "setting")?.withTintColor(.white)
         button.setImage(image, for: .normal)
@@ -37,7 +43,7 @@ class TitleView: UIView {
     }
     
     @objc private func didTapSettingButton() {
-//        delegate?.didTapTitleViewButton()
+        //        delegate?.didTapTitleViewButton()
     }
 }
 
@@ -46,7 +52,7 @@ extension TitleView {
         nameRocket.snp.makeConstraints { constraints in
             constraints.leading.top.equalToSuperview().inset(16)
         }
-
+        
         settinButton.snp.makeConstraints { constraints in
             constraints.trailing.top.equalToSuperview().inset(8)
             constraints.height.width.equalTo(40)

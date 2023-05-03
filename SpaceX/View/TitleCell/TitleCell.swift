@@ -1,3 +1,9 @@
+//
+//  TitleCell.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 14.04.2023.
+//
 
 import UIKit
 
@@ -8,28 +14,29 @@ protocol TitleCellButtonDelegate: AnyObject {
 class TitleCell: UICollectionViewCell {
     
     weak var delegate: TitleCellButtonDelegate?
-
+    private var titleView = TitleView(frame: .zero)
+    
     public static var identifier: String {
         get {
             return "TitleCell"
         }
     }
     
-    var titleViewModel: TitleRocketViewModel? {
+    var titleViewModel: TitleCellViewModel? {
         didSet {
-            titleBindViewModel()
+            guard let titleViewModel = titleViewModel else {
+                return
+            }
+            titleView.nameRocket.text = titleViewModel.name
         }
     }
     
-    let titleView = TitleView(frame: .zero)
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
+        
         contentView.addSubview(titleView)
         backgroundColor = .black
         setupContraints()
-        
         titleView.settinButton.addTarget(self, action: #selector(didTapSettinButton), for: .touchUpInside)
     }
     
@@ -41,14 +48,6 @@ class TitleCell: UICollectionViewCell {
     func didTapSettinButton() {
         print("Hello")
         delegate?.didTapTitleButton(in: self)
-    }
-    
-    
-   private func titleBindViewModel() {
-        guard let titleViewModel = titleViewModel else {
-            return
-        }
-        titleView.nameRocket.text = titleViewModel.nameRocket
     }
 }
 

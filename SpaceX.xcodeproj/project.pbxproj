@@ -15,7 +15,7 @@
 		F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */; };
 		F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */; };
 		F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */; };
-		F345A42929BE0D4600354ED1 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */; };
+		F345A42929BE0D4600354ED1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42729BE0D4600354ED1 /* MainViewModel.swift */; };
 		F345A43029BE0D5300354ED1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A42E29BE0D5300354ED1 /* APIManager.swift */; };
 		F345A43429BE0D6000354ED1 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345A43329BE0D6000354ED1 /* RocketModel.swift */; };
 		F345A43C29BE0D6700354ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F345A43629BE0D6700354ED1 /* Assets.xcassets */; };
@@ -36,13 +36,14 @@
 		F354520C29EDB07B00BB6959 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520B29EDB07B00BB6959 /* EndPointType.swift */; };
 		F354520E29EDE74400BB6959 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520D29EDE74400BB6959 /* SettingsViewController.swift */; };
 		F354521029EF326C00BB6959 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */; };
-		F367545229ED5AF7000C77B1 /* ImageRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */; };
-		F367545429ED60AF000C77B1 /* MainRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */; };
-		F367545629ED6FB0000C77B1 /* TitleRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */; };
-		F367545829ED7313000C77B1 /* InfoRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */; };
 		F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */; };
 		F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */; };
 		F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */; };
+		F3C41D282A01915900EA0402 /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41D272A01915900EA0402 /* ImageCellViewModel.swift */; };
+		F3C41D2E2A02CCDC00EA0402 /* TitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41D2D2A02CCDC00EA0402 /* TitleCellViewModel.swift */; };
+		F3C41D312A02CE6600EA0402 /* InfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41D302A02CE6600EA0402 /* InfoCellViewModel.swift */; };
+		F3C41D332A02CE7700EA0402 /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C41D322A02CE7700EA0402 /* MainCellViewModel.swift */; };
+		F3D558AF29FE5CF30075AB1C /* LaunchesRocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D558AE29FE5CF30075AB1C /* LaunchesRocketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +57,7 @@
 		F345A41D29BE0D4000354ED1 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		F345A41F29BE0D4000354ED1 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		F345A42029BE0D4000354ED1 /* UIView + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
-		F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
+		F345A42729BE0D4600354ED1 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F345A42E29BE0D5300354ED1 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F345A43329BE0D6000354ED1 /* RocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		F345A43629BE0D6700354ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,13 +76,14 @@
 		F354520B29EDB07B00BB6959 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F354520D29EDE74400BB6959 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F354520F29EF326C00BB6959 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
-		F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRocketViewModel.swift; sourceTree = "<group>"; };
-		F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRocketViewModel.swift; sourceTree = "<group>"; };
-		F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRocketViewModel.swift; sourceTree = "<group>"; };
-		F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRocketViewModel.swift; sourceTree = "<group>"; };
 		F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketViewController.swift; sourceTree = "<group>"; };
 		F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F37F872429E9FB0D009645E4 /* UIColor + Esntensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Esntensions.swift"; sourceTree = "<group>"; };
+		F3C41D272A01915900EA0402 /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
+		F3C41D2D2A02CCDC00EA0402 /* TitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellViewModel.swift; sourceTree = "<group>"; };
+		F3C41D302A02CE6600EA0402 /* InfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewModel.swift; sourceTree = "<group>"; };
+		F3C41D322A02CE7700EA0402 /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellViewModel.swift; sourceTree = "<group>"; };
+		F3D558AE29FE5CF30075AB1C /* LaunchesRocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesRocketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,20 +138,20 @@
 		F345A41629BE0D1700354ED1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F354520D29EDE74400BB6959 /* SettingsViewController.swift */,
-				F37F871829E9BFE8009645E4 /* LaunchRocketViewController */,
-				F345A41729BE0D1700354ED1 /* MainViewController */,
+				F345A41729BE0D1700354ED1 /* MainView */,
+				F3C41D2F2A02CDB500EA0402 /* Setting */,
+				F37F871829E9BFE8009645E4 /* LaunchRocket */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F345A41729BE0D1700354ED1 /* MainViewController */ = {
+		F345A41729BE0D1700354ED1 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				F345A41829BE0D1700354ED1 /* MainViewController.swift */,
 				F345A41929BE0D1700354ED1 /* DataSource.swift */,
 			);
-			path = MainViewController;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		F345A41C29BE0D4000354ED1 /* Extensions */ = {
@@ -167,11 +169,11 @@
 		F345A42529BE0D4600354ED1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F345A42729BE0D4600354ED1 /* GeneralViewModel.swift */,
-				F367545129ED5AF7000C77B1 /* ImageRocketViewModel.swift */,
-				F367545329ED60AF000C77B1 /* MainRocketViewModel.swift */,
-				F367545529ED6FB0000C77B1 /* TitleRocketViewModel.swift */,
-				F367545729ED7313000C77B1 /* InfoRocketViewModel.swift */,
+				F3C41D2C2A02CC6300EA0402 /* MainViewModel */,
+				F3C41D272A01915900EA0402 /* ImageCellViewModel.swift */,
+				F3C41D2D2A02CCDC00EA0402 /* TitleCellViewModel.swift */,
+				F3C41D302A02CE6600EA0402 /* InfoCellViewModel.swift */,
+				F3C41D322A02CE7700EA0402 /* MainCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,12 +261,12 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		F37F871829E9BFE8009645E4 /* LaunchRocketViewController */ = {
+		F37F871829E9BFE8009645E4 /* LaunchRocket */ = {
 			isa = PBXGroup;
 			children = (
 				F37F86DF29E5C7C7009645E4 /* LaunchRocketViewController.swift */,
 			);
-			path = LaunchRocketViewController;
+			path = LaunchRocket;
 			sourceTree = "<group>";
 		};
 		F37F872029E9EE30009645E4 /* BackgroundImageCell */ = {
@@ -281,6 +283,23 @@
 				F37F872229E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift */,
 			);
 			path = LaunchButtomCell;
+			sourceTree = "<group>";
+		};
+		F3C41D2C2A02CC6300EA0402 /* MainViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F345A42729BE0D4600354ED1 /* MainViewModel.swift */,
+				F3D558AE29FE5CF30075AB1C /* LaunchesRocketViewModel.swift */,
+			);
+			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		F3C41D2F2A02CDB500EA0402 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F354520D29EDE74400BB6959 /* SettingsViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,24 +385,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F367545829ED7313000C77B1 /* InfoRocketViewModel.swift in Sources */,
-				F367545629ED6FB0000C77B1 /* TitleRocketViewModel.swift in Sources */,
 				F345A45229BE0D9D00354ED1 /* TitleCell.swift in Sources */,
 				F37F86E029E5C7C7009645E4 /* LaunchRocketViewController.swift in Sources */,
 				F37F872329E9EECE009645E4 /* LaunchButtonCollectionViewCell.swift in Sources */,
 				F345A44E29BE0D9D00354ED1 /* InfoView.swift in Sources */,
-				F367545429ED60AF000C77B1 /* MainRocketViewModel.swift in Sources */,
-				F345A42929BE0D4600354ED1 /* GeneralViewModel.swift in Sources */,
+				F345A42929BE0D4600354ED1 /* MainViewModel.swift in Sources */,
+				F3C41D332A02CE7700EA0402 /* MainCellViewModel.swift in Sources */,
 				F345A45429BE0D9D00354ED1 /* ImageCell.swift in Sources */,
 				F354520C29EDB07B00BB6959 /* EndPointType.swift in Sources */,
 				F345A45329BE0D9D00354ED1 /* TitleView.swift in Sources */,
-				F367545229ED5AF7000C77B1 /* ImageRocketViewModel.swift in Sources */,
+				F3C41D2E2A02CCDC00EA0402 /* TitleCellViewModel.swift in Sources */,
 				F345A42429BE0D4000354ED1 /* UIView + Extensions.swift in Sources */,
 				F345A42129BE0D4000354ED1 /* UILabel + Extensions.swift in Sources */,
 				F345A42329BE0D4000354ED1 /* UIFont + Extensions.swift in Sources */,
+				F3D558AF29FE5CF30075AB1C /* LaunchesRocketViewModel.swift in Sources */,
 				F345A45129BE0D9D00354ED1 /* MainCell.swift in Sources */,
 				F345A43429BE0D6000354ED1 /* RocketModel.swift in Sources */,
 				F37F872529E9FB0D009645E4 /* UIColor + Esntensions.swift in Sources */,
+				F3C41D282A01915900EA0402 /* ImageCellViewModel.swift in Sources */,
+				F3C41D312A02CE6600EA0402 /* InfoCellViewModel.swift in Sources */,
 				F345A41B29BE0D1700354ED1 /* DataSource.swift in Sources */,
 				F354521029EF326C00BB6959 /* UIStackView + Extensions.swift in Sources */,
 				F345A43029BE0D5300354ED1 /* APIManager.swift in Sources */,

@@ -1,14 +1,13 @@
 //
-//  MainRockViewCell.swift
+//  InfoView.swift
 //  SpaceX
 //
-//  Created by Сергей Анпилогов on 10.03.2023.
+//  Created by Сергей Анпилогов on 14.04.2023.
 //
 
 import UIKit
 
 class InfoView: UIView {
-
  
     var heightLabel = UILabel()
     var diameterLabel = UILabel()
@@ -30,7 +29,6 @@ class InfoView: UIView {
     
         setupView()
         setupContraints()
-        
     }
     
     required init?(coder: NSCoder) {

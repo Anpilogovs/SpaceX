@@ -1,3 +1,9 @@
+//
+//  MainViewController.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 02.05.2023.
+//
 
 import UIKit
 
@@ -30,7 +36,7 @@ class MainViewController: UIViewController {
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
-    var viewModel = GenaralViewModel()
+    var viewModel = MainViewModel()
     
     // MARK: - Collection View
     lazy var collectionView: UICollectionView = {
@@ -96,7 +102,7 @@ class MainViewController: UIViewController {
             case .infoParamRocket:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.6))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2   ))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 group.contentInsets.leading = 5
                 let section = NSCollectionLayoutSection(group: group)
@@ -151,7 +157,6 @@ extension MainViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                print(self.viewModel.rockets)
             case .error(let error):
                 print(error as Any)
             }

@@ -1,3 +1,9 @@
+//
+//  ImageCell.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 14.04.2023.
+//
 
 import SDWebImage
 import UIKit
@@ -6,19 +12,24 @@ class ImageCell: UICollectionViewCell {
     
     static let identifier = "BackgroundImageCell"
     
-    var backGroundViewModel: ImageRocketViewModel? {
-        didSet {
-            configure()
-        }
-    }
-
-    let rocketImageView: UIImageView = {
+    private let rocketImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
-
+    
+    var imageViewModel: ImageCellViewModel? {
+        didSet {
+            guard let viewModel = imageViewModel else { return }
+            if let imageUrl = viewModel.imageUrl {
+                rocketImageView.sd_setImage(with: imageUrl)
+            } else {
+                rocketImageView.image = nil
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(rocketImageView)
@@ -27,15 +38,6 @@ class ImageCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        guard let viewModel = backGroundViewModel else { return }
-        if let imageUrl = viewModel.imageUrl {
-            rocketImageView.sd_setImage(with: imageUrl)
-        } else {
-            rocketImageView.image = nil
-        }
     }
 }
 

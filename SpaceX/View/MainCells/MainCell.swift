@@ -1,3 +1,9 @@
+//
+//  MainCell.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 14.04.2023.
+//
 
 import UIKit
 import SnapKit
@@ -10,9 +16,18 @@ class MainCell: UICollectionViewCell {
         }
     }
     
-    var mainViewModel: MainRocketViewModel? {
+    var mainViewModel: MainCellViewModel? {
         didSet {
-            mainBindViewModel()
+            guard let viewModel = mainViewModel else { return }
+            mainView.firstLaunchValueLabel.text = viewModel.firstFlight
+            mainView.countryValueLabel.text = viewModel.country
+            mainView.costOfValueLabel.text = viewModel.costLaunch
+            mainView.enginesFirstValueLabel.text = viewModel.firstStageEngine
+            mainView.fuelAmountTonsFirstValueLabel.text = viewModel.firstStagefuelAmountTons
+            mainView.burnTimeFirstValueLabel.text =  viewModel.secondStageBurnTime
+            mainView.enginesSecondValueLabel.text =  viewModel.secondStageEngine
+            mainView.fuelAmountTonsSecondValueLabel.text = viewModel.secondStageEngine
+            mainView.burnTimeSecondValueLabel.text = viewModel.secondStageBurnTime
         }
     }
     
@@ -28,22 +43,9 @@ class MainCell: UICollectionViewCell {
         contentView.addSubview(mainView)
         backgroundColor = .blue
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    private func mainBindViewModel() {
-        guard let viewModel = mainViewModel else { return }
-        mainView.firstLaunchValueLabel.text = "\(String(describing: viewModel.rocket.firstFlight))"
-        mainView.countryValueLabel.text = viewModel.country
-        mainView.costOfValueLabel.text = String(describing: viewModel.costPerLaunch)
-        mainView.enginesFirstValueLabel.text = "\(viewModel.rocket.firstStage.engines)"
-        mainView.fuelAmountTonsFirstValueLabel.text = "\(viewModel.rocket.firstStage.fuelAmountTons)"
-        mainView.burnTimeFirstValueLabel.text = String(describing: viewModel.rocket.firstStage.burnTimeSEC)
-        mainView.enginesSecondValueLabel.text = "\(viewModel.rocket.secondStage.engines )"
-        mainView.fuelAmountTonsSecondValueLabel.text = "\(viewModel.rocket.secondStage.fuelAmountTons )"
-        mainView.burnTimeSecondValueLabel.text = String(describing: viewModel.rocket.secondStage.burnTimeSEC)
     }
 }
 

@@ -1,3 +1,9 @@
+//
+//  MainView.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 14.04.2023.
+//
 
 import Foundation
 import UIKit
@@ -85,7 +91,6 @@ class MainView: UIView {
                                       spacing: 50,
                                       distribution: .equalSpacing)
                 
-        
         addSubview(mainStackView)
     }
 }
@@ -96,10 +101,7 @@ extension MainView {
         // MARK: - Constraints
         // Ограничения для UIStackView
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top:20,
-                                                             left: 20,
-                                                             bottom: 20,
-                                                             right: 20))
+            make.edges.equalToSuperview().inset(20)
         }
     }
 }

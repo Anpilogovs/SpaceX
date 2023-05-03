@@ -1,3 +1,9 @@
+//
+//  Rocket.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 02.05.2023.
+//
 
 import Foundation
 
@@ -26,7 +32,6 @@ struct Rocket: Codable {
         case country, company, description, id
     }
 }
-
 // MARK: - FirstStage
 struct FirstStage: Codable {
     let engines: Int

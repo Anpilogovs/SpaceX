@@ -1,3 +1,9 @@
+//
+//  APIManager.swift
+//  SpaceX
+//
+//  Created by Сергей Анпилогов on 03.04.2023.
+//
 
 import Foundation
 
